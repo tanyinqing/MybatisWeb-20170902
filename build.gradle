@@ -16,4 +16,5 @@ dependencies {
     compile 'org.mybatis:mybatis:3.4.6'
     compile 'mysql:mysql-connector-java:5.1.46'
     compile 'javax:javaee-api:7.0'
+    compile 'jstl:jstl:1.2'
 }

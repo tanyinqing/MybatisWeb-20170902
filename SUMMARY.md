@@ -2,6 +2,7 @@
 * [导读](README.md)
 * 页面对应关系
   * [注册的jsp页面](src/main/webapp/sign_up.jsp)	    
+  * [主页](src/main/webapp/home.jsp)	    
 * 配置后台方法     
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
 * 配置图书对应的数据库表     

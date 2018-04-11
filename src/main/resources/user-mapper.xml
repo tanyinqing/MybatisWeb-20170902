@@ -24,6 +24,10 @@
       SELECT * FROM db.user WHERE id=#{id}
     </select>
 
+    <select id="signIn" resultType="model.User"  parameterType="model.User">
+      SELECT * FROM db.user WHERE username=#{username} AND password=#{password}
+    </select>
+
     <!-- <update id="remove" parameterType="int">
        DELETE FROM db.user WHERE id=#{id}
     </update>-->

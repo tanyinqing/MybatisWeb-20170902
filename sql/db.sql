@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS db.user;
 CREATE TABLE db.user (
   id       INT AUTO_INCREMENT PRIMARY KEY
   COMMENT 'id PK', 
-  username VARCHAR(255) NOT NULL
+  username VARCHAR(255) NOT NULL UNIQUE
   COMMENT 'username',
   password VARCHAR(255) NOT NULL
   COMMENT 'password'
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS db.book;
 CREATE TABLE db.book (
   id      INT AUTO_INCREMENT PRIMARY KEY
   COMMENT 'id PK',
-  title   VARCHAR(255)  NOT NULL
+  title   VARCHAR(255)  NOT NULL UNIQUE
   COMMENT 'title NN',
   price   DECIMAL(8, 2) NOT NULL
   COMMENT 'price NN',

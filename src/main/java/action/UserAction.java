@@ -24,6 +24,34 @@ public class UserAction extends HttpServlet {
         if (action.equals("signUp")) {
             signUp(req, resp);
         }
+        if (action.equals("signIn")) {
+            signIn(req, resp);
+        }
+
+        if (action.equals("signOut")) {
+            signOut(req, resp);
+        }
+    }
+
+    private void signOut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().invalidate();
+        resp.sendRedirect("index.jsp");
+    }
+    private void signIn(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+
+        try(SqlSession sqlSession = MyBatisSession.getSqlSession(false)){
+            User user = sqlSession.selectOne("mapper.UserMapper.signIn", new User(null, username, password));
+            if (user == null) {
+                req.setAttribute("message", "Invalid username or password.");
+                req.getRequestDispatcher("index.jsp").forward(req, resp);
+            } else {
+                req.getSession().setAttribute("username", username);
+//                resp.sendRedirect("home.jsp");
+                resp.sendRedirect("/book?action=queryAll");
+            }
+        }
     }
 
     private void signUp(HttpServletRequest req, HttpServletResponse resp) throws IOException {
