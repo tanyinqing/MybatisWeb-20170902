@@ -10,8 +10,18 @@
 <html>
 <head>
     <title>Title</title>
+    <script>
+        function del() {
+            return confirm("REMOVE??")
+        }
+    </script>
 </head>
 <body>
+<c:if test="${sessionScope.username eq null}">
+    <c:redirect url="index.jsp"/>
+</c:if>
+
+
 <h1>home page</h1>
 ${sessionScope.username}
 <p><a href="/user?action=signOut">Sign out</a></p>
@@ -26,7 +36,7 @@ ${sessionScope.username}
 </form>
 
 <hr>
-<table>
+<table border="1">
     <tr>
         <th>COUNT</th>
         <th>TITLE</th>
@@ -43,7 +53,7 @@ ${sessionScope.username}
             <td>${book.amount}</td>
             <td>${book.pubTime}</td>
             <td><a href="/book?action=queryById&id=${book.id}">EDIT</a></td>
-            <td><a href="/book?action=remove&id=${book.id}">REMOVE</a></td>
+            <td><a href="/book?action=remove&id=${book.id}" onclick="return del()">REMOVE</a></td>
         </tr>
     </c:forEach>
 </table>

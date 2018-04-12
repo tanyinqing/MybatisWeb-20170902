@@ -20,7 +20,7 @@
         SELECT * FROM db.book WHERE id=#{id}
     </select>
 
-    <delete id="delete" parameterType="int">
+    <delete id="remove" parameterType="int">
         DELETE FROM db.book WHERE id=#{id}
     </delete>
 

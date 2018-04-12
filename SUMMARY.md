@@ -3,8 +3,11 @@
 * 页面对应关系
   * [注册的jsp页面](src/main/webapp/sign_up.jsp)	    
   * [主页](src/main/webapp/home.jsp)	    
+  * [登录页面](src/main/webapp/index.jsp)	    
+  * [图书编辑](src/main/webapp/edit.jsp)	    
 * 配置后台方法     
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
+    * [用户表对应的后台](src/main/java/action/BookAction.java)	
 * 配置图书对应的数据库表     
     * [配置测试类](src/main/java/demo/BookTest.java)	
     * [配置实体类和数据库表对应](src/main/java/model/Book.java)	
@@ -22,6 +25,7 @@
     * [配置数据库账号的属性](src/main/resources/jdbc.properties)	
     * [配置数据库参数](src/main/resources/mybatis-config.xml)	
     * [配置数据库映射语句](src/main/resources/user-mapper.xml)	
+    * [配置数据库映射语句](src/main/resources/book-mapper.xml)	
 
 
 

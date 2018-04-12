@@ -25,7 +25,48 @@ public class BookAction extends HttpServlet {
         if (action.equals("queryAll")) {
             queryAll(req, resp);
         }
+        if (action.equals("queryById")) {
+            queryById(req, resp);
+        }
+        if (action.equals("update")) {
+            update(req, resp);
+        }
+        if (action.equals("remove")) {
+            remove(req, resp);
+        }
 
+    }
+    private void remove(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+            sqlSession.delete("book.remove", id);
+        }
+        queryAll(req, resp);
+    }
+    private void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        String title = req.getParameter("title");
+        double price = Double.parseDouble(req.getParameter("price"));
+        int amount = Integer.parseInt(req.getParameter("amount"));
+        String pubTime = req.getParameter("pubTime");
+
+        Book book = new Book(id, title, price, amount, pubTime);
+
+        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+            sqlSession.update("book.update", book);
+        }
+
+        queryAll(req, resp);
+    }
+
+    private void queryById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+
+        try (SqlSession sqlSession = MyBatisSession.getSqlSession(false)) {
+            req.getSession().setAttribute("book", sqlSession.selectOne("book.queryById", id));
+        }
+
+        resp.sendRedirect("edit.jsp");
     }
 
     private void queryAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
