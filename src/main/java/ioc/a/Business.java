@@ -19,7 +19,7 @@ private UsbWriter usbWriter;
     public Business(UsbWriter usbWriter) {
         this.usbWriter = usbWriter;
     }
-
+//调用底层模块类的方法
     public  void saveData(){
         this.usbWriter.writeToUsb();
     }

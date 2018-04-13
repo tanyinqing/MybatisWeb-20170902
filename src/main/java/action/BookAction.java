@@ -88,8 +88,8 @@ public class BookAction extends HttpServlet {
         try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
             sqlSession.insert("book.create", book);
         }
-
-        resp.sendRedirect("home.jsp");
+        queryAll(req,resp);
+//        resp.sendRedirect("home.jsp");
     }
 
 

@@ -1,4 +1,4 @@
-package ioc.b;
+package ioc.c;
 
 /**
  * 接口 抽象的概念存储设备

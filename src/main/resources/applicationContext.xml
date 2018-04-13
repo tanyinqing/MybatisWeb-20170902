@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="floppyWriter" class="ioc.c.FloppyWriter"/>
+    <bean id="subWriter" class="ioc.c.UsbWriter"/>
+    <bean id="business" class="ioc.c.Business">
+        <property name="deviceWriter" ref="subWriter"/>
+    </bean>
+</beans>
+
+<!--
+配置文件的创建 new&#45;&#45;xml Configuration File&#45;&#45;spring Config-->

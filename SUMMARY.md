@@ -1,5 +1,8 @@
 
 * [导读](README.md)
+* spring框架的使用
+   * [spring的配置文件](src/main/resources/applicationContext.xml)	
+   * [配置文件的使用](src/main/java/ioc/c/Test.java)	
 * 页面对应关系
   * [注册的jsp页面](src/main/webapp/sign_up.jsp)	    
   * [主页](src/main/webapp/home.jsp)	    

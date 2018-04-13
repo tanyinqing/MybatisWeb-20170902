@@ -7,7 +7,7 @@ import ioc.a.UsbWriter;
  */
 public class Business {
 
-private DeviceWriter deviceWriter;
+private DeviceWriter deviceWriter;//接口实现类
 
     public Business(DeviceWriter deviceWriter) {
         this.deviceWriter = deviceWriter;
