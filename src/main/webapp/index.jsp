@@ -11,12 +11,17 @@
     <title>$Title$</title>
   </head>
   <body>
-  <form action="/user" method="post">
+  <form action="/user/create" method="post">
     <input type="hidden" name="action" value="signIn">
     <input name="username" placeholder="Username" value="tan"><br>
     <input type="password" name="password" placeholder="Password" value="123"><br>
     <input type="submit" value="Sign in">
-  </form>
+  </form><%--<form action="/user" method="post">
+    <input type="hidden" name="action" value="signIn">
+    <input name="username" placeholder="Username" value="tan"><br>
+    <input type="password" name="password" placeholder="Password" value="123"><br>
+    <input type="submit" value="Sign in">
+  </form>--%>
   ${requestScope.message}
   <p>
     <a href="sign_up.jsp">Sign up</a>

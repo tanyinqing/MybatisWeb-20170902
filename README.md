@@ -1,5 +1,10 @@
 * [目录](SUMMARY.md)
 
+web.xml Project Structure-Facets- web 修改路径配置web.xml文件
+Project Structure --Facets--spring  加载spring的配置文件
+
+- ioc 是一种设计方式 Inversion of Control  控制反转
+- DI 是依赖注入
 
 对应的老师的项目下载地址
 

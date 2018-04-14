@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--能在bean中配置的，是class类 不能是抽象类 也不能是接口 可以是java源码中类
+    bean 是要实例化的-->
+    <bean id="calculator" class="ioc.spring.Calculator">
+        <property name="x" value="1"/>
+        <property name="y" value="2"/>
+    </bean>
+</beans>

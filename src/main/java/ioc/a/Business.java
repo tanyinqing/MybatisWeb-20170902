@@ -4,9 +4,9 @@ package ioc.a;
  * 商务类  高层应用类
  */
 public class Business {
-/*   private FloppyWriter floppyWriter;
+/*   private FloppyWriter11 floppyWriter;
 
-    public Business(FloppyWriter floppyWriter) {
+    public Business(FloppyWriter11 floppyWriter) {
         this.floppyWriter = floppyWriter;
     }
 

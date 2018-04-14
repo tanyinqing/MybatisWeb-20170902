@@ -5,9 +5,13 @@
     <bean id="floppyWriter" class="ioc.c.FloppyWriter"/>
     <bean id="subWriter" class="ioc.c.UsbWriter"/>
     <bean id="business" class="ioc.c.Business">
-        <property name="deviceWriter" ref="subWriter"/>
+        <!--属性配置  声明具有set方法的域 ref是reference -->
+        <!--<property name="deviceWriter" ref="subWriter"/>-->
+        <constructor-arg ref="subWriter"/>
     </bean>
+
+
 </beans>
 
 <!--
-配置文件的创建 new&#45;&#45;xml Configuration File&#45;&#45;spring Config-->
+配置文件的创建 new  xml Configuration File  spring Config  bean头声明 -->
