@@ -1,10 +1,13 @@
 
 * [导读](README.md)
+* Spring MVC + MyBaits实现和web页面的交互
+    * [MVC配置后台的父类](src/main/java/controller/BaseController.java)	
+    * [MVC配置用户表对应的后台](src/main/java/controller/UserController.java)	
 * spring框架webMVC网络框架文件的加载
   * [加载网络文件](src/main/webapp/WEB-INF/web.xml)  
   * [第二个加载网络文件](src/main/webapp/WEB-INF/web-servlet.xml)  
   * [控制文件的配置](src/main/java/controller/UserController.java)	
-* spring框架的使用
+* spring框架IoC_DI控制反转的理解
    * [spring的配置文件](src/main/resources/applicationContext.xml)	
    * [配置文件的使用](src/main/java/ioc/c/Test.java)	 
    * [spring的第二个配置文件](src/main/resources/beans.xml)	
@@ -16,10 +19,10 @@
   * [主页](src/main/webapp/home.jsp)	    
   * [登录页面](src/main/webapp/index.jsp)	    
   * [图书编辑](src/main/webapp/edit.jsp)	    
-* 配置后台方法     
+* MyBaits框架配置后台方法     
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
-    * [用户表对应的后台](src/main/java/action/BookAction.java)	
-* 配置图书对应的数据库表     
+    * [图书表对应的后台](src/main/java/action/BookAction.java)	
+* MyBaits框架配置图书对应的数据库表     
     * [配置测试类](src/main/java/demo/BookTest.java)	
     * [配置实体类和数据库表对应](src/main/java/model/Book.java)	
     * [配置数据库映射语句  并要加载进来](src/main/resources/book-mapper.xml)	
