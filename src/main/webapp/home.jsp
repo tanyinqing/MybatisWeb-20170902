@@ -17,15 +17,15 @@
     </script>
 </head>
 <body>
-<c:if test="${sessionScope.username eq null}">
+<c:if test="${sessionScope.user.username eq null}">
     <c:redirect url="index.jsp"/>
 </c:if>
 
 
 <h1>home page</h1>
-${sessionScope.username}
-<p><a href="/user?action=signOut">Sign out</a></p>
-
+${sessionScope.user.username}
+<%--<p><a href="/user?action=signOut">Sign out</a></p>--%>
+<p><a href="/user/signOut">Sign out</a></p>
 <form action="/book" method="post">
     <input type="hidden" name="action" value="create">
     <input name="title" placeholder="Title" value="title1"><br>
