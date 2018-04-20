@@ -15,8 +15,8 @@ import util.MyBatisSession;
 @RequestMapping("user")
 public class UserController extends BaseController{
 
-    @RequestMapping("create")
-    private String create(User user) {
+    @RequestMapping("signUp")
+    private String signUp(User user) {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
@@ -31,11 +31,13 @@ public class UserController extends BaseController{
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+//            运用的赋值语句
              user = sqlSession.selectOne("mapper.UserMapper.signIn", user);
         }
         if (user != null) {
             session.setAttribute("user",user);
-            return "redirect:/home.jsp";
+//            return "redirect:/home.jsp";
+            return "redirect:/book/queryAll";
         }
         request.setAttribute("message", "Invalid username or password.");
         return "/index.jsp"; // forward

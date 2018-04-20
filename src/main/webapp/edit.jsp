@@ -13,8 +13,10 @@
 <body>
 <h1>edit page</h1>
 
-<form action="/book" method="post">
-    <input type="hidden" name="action" value="update">
+<form action="/book/update" method="post">
+<%--<form action="/book" method="post">--%>
+    <%--<input type="hidden" name="action" value="update">--%>
+    <%--<input type="hidden" name="id" value="${sessionScope.book.id}">--%>
     <input type="hidden" name="id" value="${sessionScope.book.id}">
     <input name="title" placeholder="Title" value="${sessionScope.book.title}"><br>
     <input name="price" placeholder="Price" value="${sessionScope.book.price}"><br>

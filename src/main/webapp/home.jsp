@@ -26,8 +26,9 @@
 ${sessionScope.user.username}
 <%--<p><a href="/user?action=signOut">Sign out</a></p>--%>
 <p><a href="/user/signOut">Sign out</a></p>
-<form action="/book" method="post">
-    <input type="hidden" name="action" value="create">
+<form action="/book/create" method="post">
+<%--<form action="/book" method="post">--%>
+    <%--<input type="hidden" name="action" value="create">--%>
     <input name="title" placeholder="Title" value="title1"><br>
     <input name="price" placeholder="Price" value="11.2"><br>
     <input name="amount" placeholder="Amount" value="100"><br>
@@ -52,8 +53,9 @@ ${sessionScope.user.username}
             <td>${book.price}</td>
             <td>${book.amount}</td>
             <td>${book.pubTime}</td>
-            <td><a href="/book?action=queryById&id=${book.id}">EDIT</a></td>
-            <td><a href="/book?action=remove&id=${book.id}" onclick="return del()">REMOVE</a></td>
+            <%--<td><a href="/book?action=queryById&id=${book.id}">EDIT</a></td>--%>
+            <td><a href="/book/queryById/${book.id}">EDIT</a></td>
+            <td><a href="/book/remove/${book.id}" onclick="return del()">REMOVE</a></td>
         </tr>
     </c:forEach>
 </table>

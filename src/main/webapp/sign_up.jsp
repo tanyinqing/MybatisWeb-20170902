@@ -15,9 +15,9 @@
 <h1>Sign up page</h1>
 <%--<form action="signUp.jsp" method="post">--%>
 <%--<form action="/user" method="post">--%>
-<form action="/user/create" method="post">
+<form action="/user/signUp" method="post">
     <%--<input type="hidden" name="action" value="signUp">--%>
-    <%--name属性必须和模型类向匹配--%>
+    <%--name属性必须和模型类匹配--%>
     <input name="username" placeholder="username" value="tan"> <br>
     <input type="password" name="password" placeholder="Passsword" value="123"><br>
     <input type="submit" value="Sign up">
