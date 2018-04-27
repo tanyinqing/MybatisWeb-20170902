@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import util.MyBatisSession;
 
 /**
- * ¿ØÖÆÆ÷
- * ×¢½â·½Ê½À´Ğ´
- * ÇëÇóÓ³Éä
+ * æ§åˆ¶å™¨
+ * æ³¨è§£æ–¹å¼æ¥å†™
+ * è¯·æ±‚æ˜ å°„
  */
 @Controller
 @RequestMapping("user")
@@ -18,20 +18,20 @@ public class UserController extends BaseController{
     @RequestMapping("signUp")
     private String signUp(User user) {
 //        System.out.println("user..."+user.toString());
-        //ÔËÓÃmybatis¿ò¼Ü°ÑÓÃ»§´æ´¢µ½Êı¾İ¿âÖĞ  Òşº¬µÄ¶ÔÓ¦¹ØÏµ
+        //è¿ç”¨mybatisæ¡†æ¶æŠŠç”¨æˆ·å­˜å‚¨åˆ°æ•°æ®åº“ä¸­  éšå«çš„å¯¹åº”å…³ç³»
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
             sqlSession.insert("mapper.UserMapper.create", user);
         }
         return "redirect:/index.jsp";
     }
 
-    //ÓÃ»§µÄµÇÂ¼
+    //ç”¨æˆ·çš„ç™»å½•
     @RequestMapping("signIn")
     private String signIn(User user) {
 //        System.out.println("user..."+user.toString());
-        //ÔËÓÃmybatis¿ò¼Ü°ÑÓÃ»§´æ´¢µ½Êı¾İ¿âÖĞ  Òşº¬µÄ¶ÔÓ¦¹ØÏµ
+        //è¿ç”¨mybatisæ¡†æ¶æŠŠç”¨æˆ·å­˜å‚¨åˆ°æ•°æ®åº“ä¸­  éšå«çš„å¯¹åº”å…³ç³»
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
-//            ÔËÓÃµÄ¸³ÖµÓï¾ä
+//            è¿ç”¨çš„èµ‹å€¼è¯­å¥
              user = sqlSession.selectOne("mapper.UserMapper.signIn", user);
         }
         if (user != null) {

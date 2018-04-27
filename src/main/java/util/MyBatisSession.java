@@ -7,13 +7,13 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 
-// µ¥ÀıÄ£Ê½  ÈÎºÎÊ±ºòÖ»ÓĞÒ»¸öÀàµÄÊµÀı
+// å•ä¾‹æ¨¡å¼  ä»»ä½•æ—¶å€™åªæœ‰ä¸€ä¸ªç±»çš„å®ä¾‹
 public class MyBatisSession {
-//    ¹¤³§Ä£Ê½  ¾ÍÊÇ¹¤³§
+//    å·¥å‚æ¨¡å¼  å°±æ˜¯å·¥å‚
     private static SqlSessionFactory sqlSessionFactory;
     private static SqlSessionFactory getSqlSessionFactory() {
         if (sqlSessionFactory == null) {
-            try {  //´ÓÅäÖÃÎÄ¼şÖĞ»ñµÃ
+            try {  //ä»é…ç½®æ–‡ä»¶ä¸­è·å¾—
                 sqlSessionFactory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis-config.xml"));
             } catch (IOException e) {
                 e.printStackTrace();
@@ -21,9 +21,9 @@ public class MyBatisSession {
         }
         return sqlSessionFactory;
     }
-//´Ó¹¤³§ÖĞÈ¡µÃÒ»¸ö²úÆ·  SqlSessionÊı¾İ¿â»á»°
+//ä»å·¥å‚ä¸­å–å¾—ä¸€ä¸ªäº§å“  SqlSessionæ•°æ®åº“ä¼šè¯
     public static SqlSession getSqlSession(boolean autoCommit) {
-//        ÊÇ·ñ×Ô¶¯Ìá½»  ¸úÊÂÎñÓĞ¹Ø
+//        æ˜¯å¦è‡ªåŠ¨æäº¤  è·Ÿäº‹åŠ¡æœ‰å…³
         return getSqlSessionFactory().openSession(autoCommit);
     }
 }

@@ -15,9 +15,9 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * ¿ØÖÆÆ÷
- * ×¢½â·½Ê½À´Ğ´
- * ÇëÇóÓ³Éä
+ * æ§åˆ¶å™¨
+ * æ³¨è§£æ–¹å¼æ¥å†™
+ * è¯·æ±‚æ˜ å°„
  */
 @Controller
 @RequestMapping("book")
@@ -26,7 +26,7 @@ public class BookController extends BaseController{
     @RequestMapping("create")
     private String create(Book book) {
 //        System.out.println("user..."+user.toString());
-        //ÔËÓÃmybatis¿ò¼Ü°ÑÓÃ»§´æ´¢µ½Êı¾İ¿âÖĞ  Òşº¬µÄ¶ÔÓ¦¹ØÏµ
+        //è¿ç”¨mybatisæ¡†æ¶æŠŠç”¨æˆ·å­˜å‚¨åˆ°æ•°æ®åº“ä¸­  éšå«çš„å¯¹åº”å…³ç³»
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
             sqlSession.insert("book.create", book);
         }
@@ -37,37 +37,37 @@ public class BookController extends BaseController{
     @RequestMapping("queryAll")
     private String queryAll() {
 //        System.out.println("user..."+user.toString());
-        //ÔËÓÃmybatis¿ò¼Ü°ÑÓÃ»§´æ´¢µ½Êı¾İ¿âÖĞ  Òşº¬µÄ¶ÔÓ¦¹ØÏµ
+        //è¿ç”¨mybatisæ¡†æ¶æŠŠç”¨æˆ·å­˜å‚¨åˆ°æ•°æ®åº“ä¸­  éšå«çš„å¯¹åº”å…³ç³»
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
            session.setAttribute("books", sqlSession.selectList("book.queryAll"));
         }
         return "redirect:/home.jsp";
     }
 
-    @RequestMapping("queryById/{id}") //Â·¾¶²ÎÊı·¢ÉèÖÃºÍ»ñÈ¡
+    @RequestMapping("queryById/{id}") //è·¯å¾„å‚æ•°å‘è®¾ç½®å’Œè·å–
     private String queryById(@PathVariable int id) {
 //        System.out.println("user..."+user.toString());
-        //ÔËÓÃmybatis¿ò¼Ü°ÑÓÃ»§´æ´¢µ½Êı¾İ¿âÖĞ  Òşº¬µÄ¶ÔÓ¦¹ØÏµ  false ²éÑ¯ºÍÊÂÎñÎŞ¹Ø
+        //è¿ç”¨mybatisæ¡†æ¶æŠŠç”¨æˆ·å­˜å‚¨åˆ°æ•°æ®åº“ä¸­  éšå«çš„å¯¹åº”å…³ç³»  false æŸ¥è¯¢å’Œäº‹åŠ¡æ— å…³
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(false)) {
            session.setAttribute("book", sqlSession.selectOne("book.queryById", id));
         }
         return "redirect:/edit.jsp";
     }
 
-    @RequestMapping("update") //Â·¾¶²ÎÊı
+    @RequestMapping("update") //è·¯å¾„å‚æ•°
     private String update(Book book) {
 //        System.out.println("user..."+user.toString());
-        //ÔËÓÃmybatis¿ò¼Ü°ÑÓÃ»§´æ´¢µ½Êı¾İ¿âÖĞ  Òşº¬µÄ¶ÔÓ¦¹ØÏµ  false ²éÑ¯ºÍÊÂÎñÎŞ¹Ø
+        //è¿ç”¨mybatisæ¡†æ¶æŠŠç”¨æˆ·å­˜å‚¨åˆ°æ•°æ®åº“ä¸­  éšå«çš„å¯¹åº”å…³ç³»  false æŸ¥è¯¢å’Œäº‹åŠ¡æ— å…³
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
            sqlSession.update("book.update", book);
         }
         return queryAll();
     }
 
-    @RequestMapping("remove/{id}") //Â·¾¶²ÎÊı
+    @RequestMapping("remove/{id}") //è·¯å¾„å‚æ•°
     private String remove(@PathVariable int id) {
 //        System.out.println("user..."+user.toString());
-        //ÔËÓÃmybatis¿ò¼Ü°ÑÓÃ»§´æ´¢µ½Êı¾İ¿âÖĞ  Òşº¬µÄ¶ÔÓ¦¹ØÏµ  false ²éÑ¯ºÍÊÂÎñÎŞ¹Ø
+        //è¿ç”¨mybatisæ¡†æ¶æŠŠç”¨æˆ·å­˜å‚¨åˆ°æ•°æ®åº“ä¸­  éšå«çš„å¯¹åº”å…³ç³»  false æŸ¥è¯¢å’Œäº‹åŠ¡æ— å…³
         try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
            sqlSession.delete("book.remove", id);
         }

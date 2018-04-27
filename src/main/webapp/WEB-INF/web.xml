@@ -20,7 +20,7 @@
         <url-pattern>/static/*</url-pattern>
     </servlet-mapping>-->
 
-    <!-- Spring ContextLoaderListener Registry 监听器-->
+    <!-- Spring ContextLoaderListener Registry 监听器 这个可能是系统的-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
