@@ -25,6 +25,7 @@ public class UserController extends BaseController{
         return "redirect:/index.jsp";
     }
 
+
     //用户的登录
     @RequestMapping("signIn")
     private String signIn(User user) {

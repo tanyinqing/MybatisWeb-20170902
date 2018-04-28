@@ -19,7 +19,19 @@ JavaEE-Frameworks-20170902  这个是一个java的项目 配置服务器报错�
 
 Java EE包含JSP和Servlet
 
-
+1. build.gradle
+2. db.sql
+3. index.jsp
+4. model.User.java
+5. controller.BaseController.java
+6. controller.UserController.java
+7. WEB-INF/web.xml
+8. resources/applicationContext.xml
+9. WEB-INF/web-servlet.xml
+10. resources/mybatis-config.xml
+11. resources/jdbc.properties
+12. resources/user-mapper.xml
+13. util.MyBatisSession.java
 
 - 应用的典范  
 - 重新部署  alt+shift+F10 选redeploy
