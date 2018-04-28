@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,13 +22,13 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("book")
-public class BookController extends BaseController{
+public class BookController extends BaseController {
 
     @RequestMapping("create")
     private String create(Book book) {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系
-        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
             sqlSession.insert("book.create", book);
         }
 //        return "redirect:/home.jsp";
@@ -38,8 +39,8 @@ public class BookController extends BaseController{
     private String queryAll() {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系
-        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
-           session.setAttribute("books", sqlSession.selectList("book.queryAll"));
+        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+            session.setAttribute("books", sqlSession.selectList("book.queryAll"));
         }
         return "redirect:/home.jsp";
     }
@@ -48,8 +49,8 @@ public class BookController extends BaseController{
     private String queryById(@PathVariable int id) {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系  false 查询和事务无关
-        try(SqlSession sqlSession = MyBatisSession.getSqlSession(false)) {
-           session.setAttribute("book", sqlSession.selectOne("book.queryById", id));
+        try (SqlSession sqlSession = MyBatisSession.getSqlSession(false)) {
+            session.setAttribute("book", sqlSession.selectOne("book.queryById", id));
         }
         return "redirect:/edit.jsp";
     }
@@ -58,8 +59,8 @@ public class BookController extends BaseController{
     private String update(Book book) {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系  false 查询和事务无关
-        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
-           sqlSession.update("book.update", book);
+        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+            sqlSession.update("book.update", book);
         }
         return queryAll();
     }
@@ -68,8 +69,22 @@ public class BookController extends BaseController{
     private String remove(@PathVariable int id) {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系  false 查询和事务无关
-        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
-           sqlSession.delete("book.remove", id);
+        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+            sqlSession.delete("book.remove", id);
+        }
+        return queryAll();
+    }
+
+
+    @RequestMapping("removeBooks") //路径参数removeBooks
+    private String removeBooks(int[] ids) {
+        System.out.println(Arrays.toString(ids));
+//        System.out.println("user..."+user.toString());
+        //运用mybatis框架把用户存储到数据库中  隐含的对应关系  false 查询和事务无关
+        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+            for (int id : ids) {
+                sqlSession.delete("book.remove", id);
+            }
         }
         return queryAll();
     }

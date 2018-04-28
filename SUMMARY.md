@@ -3,8 +3,7 @@
 * Spring MVC + MyBaits实现和web页面的交互
     * [MVC配置后台的父类](src/main/java/controller/BaseController.java)	
     * [MVC配置用户表对应的后台](src/main/java/controller/UserController.java)	
-    * [MVC配置图书表对应的后台](src/main/java/controller/BookController.java)	
-    * [html笔记](tan.htm)
+    * [MVC配置图书表对应的后台](src/main/java/controller/BookController.java)	  
 * spring框架webMVC网络框架文件的加载
   * [加载网络文件](src/main/webapp/WEB-INF/web.xml)  
   * [第二个加载网络文件](src/main/webapp/WEB-INF/web-servlet.xml)  

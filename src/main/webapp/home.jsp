@@ -37,8 +37,11 @@ ${sessionScope.user.username}
 </form>
 
 <hr>
+<form action="/book/removeBooks" method="post" onsubmit="return del()">
+
 <table border="1">
     <tr>
+        <th><input type="checkbox"></th>
         <th>COUNT</th>
         <th>TITLE</th>
         <th>PRICE</th>
@@ -48,6 +51,7 @@ ${sessionScope.user.username}
     </tr>
     <c:forEach var="book" items="${sessionScope.books}" varStatus="vs">
         <tr>
+            <td><input name="ids" type="checkbox" value="${book.id}"></td>
             <td>${vs.count}</td>
             <td>${book.title}</td>
             <td>${book.price}</td>
@@ -59,5 +63,8 @@ ${sessionScope.user.username}
         </tr>
     </c:forEach>
 </table>
+<hr>
+    <input type="submit" value="REMOVE SELECTED">
+</form>
 </body>
 </html>
