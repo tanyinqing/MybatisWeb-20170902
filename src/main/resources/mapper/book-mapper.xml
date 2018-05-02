@@ -4,11 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--这个是映射文件 定义sql语句  对应的必须是全限定名  对应的名称空间 useGeneratedKeys 主键 -->
 <mapper namespace="book">
-    <insert id="create" parameterType="model.Book" useGeneratedKeys="true" keyProperty="id">
+    <!--<insert id="create" parameterType="model.Book" useGeneratedKeys="true" keyProperty="id">-->
+   <!--类名的小写自动匹配-->
+    <insert id="create" parameterType="book" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO db.book VALUES (NULL, #{title}, #{price},#{amount},#{pubTime})
     </insert>
 
-    <select id="queryAll" resultType="model.Book" >
+    <!--<select id="queryAll" resultType="model.Book" >-->
+    <select id="queryAll" resultType="book" >
         SELECT * FROM db.book ORDER BY id DESC;
     </select>
 

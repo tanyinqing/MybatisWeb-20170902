@@ -24,7 +24,7 @@
 * MyBaits框架配置后台方法这个比较少用     
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
     * [图书表对应的后台](src/main/java/action/BookAction.java)	
-* MyBaits框架配置图书对应的数据库表     
+* MyBaits框架配置图书对应的数据库表   映射文件  
     * [配置测试类](src/main/java/demo/BookTest.java)	
     * [配置实体类和数据库表对应](src/main/java/model/Book.java)	
     * [配置数据库映射语句  并要加载进来](src/main/resources/book-mapper.xml)	
@@ -32,12 +32,12 @@
     * [配置grade文件](build.gradle)	
 * mybatis框架的初始化java配置和测试   
     * [配置测试类](src/main/java/demo/MyBatisTest.java)	
-    * [配置工具类](src/main/java/util/MyBatisSession.java)	
+    * [配置工具类 以后可以没有](src/main/java/util/MyBatisSession.java)	
     * [配置实体类和数据库表对应](src/main/java/model/User.java)	
     * [配置接口](src/main/java/mapper/UserMapper.java)	
 * 初始化mybatis框架的数据库资源配置  
     * [配置数据库账号的属性](src/main/resources/jdbc.properties)	
-    * [配置数据库参数](src/main/resources/mybatis-config.xml)	
+    * [配置数据库参数 以后可以没有](src/main/resources/mybatis-config.xml)	
     * [配置数据库映射语句](src/main/resources/user-mapper.xml)	
     * [配置数据库映射语句](src/main/resources/book-mapper.xml)	
 * 工具类相关        

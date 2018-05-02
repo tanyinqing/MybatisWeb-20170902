@@ -2,6 +2,7 @@ package controller;
 
 import model.User;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import util.MyBatisSession;
@@ -13,15 +14,18 @@ import util.MyBatisSession;
  */
 @Controller
 @RequestMapping("user")
-public class UserController extends BaseController{
+public class UserController extends BaseController{//高级业务类
+
+    @Autowired
+    private SqlSession sqlSession;
 
     @RequestMapping("signUp")
     private String signUp(User user) {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系
-        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+//        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {//底层模块类
             sqlSession.insert("mapper.UserMapper.create", user);
-        }
+//        }
         return "redirect:/index.jsp";
     }
 
@@ -31,14 +35,14 @@ public class UserController extends BaseController{
     private String signIn(User user) {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系
-        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
+//        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
 //            运用的赋值语句
              user = sqlSession.selectOne("mapper.UserMapper.signIn", user);
-        }
+//        }
         if (user != null) {
             session.setAttribute("user",user);
-//            return "redirect:/home.jsp";
-            return "redirect:/book/queryAll";
+            //      return "redirect:/home.jsp";
+                      return "redirect:/book/queryAll";
         }
         request.setAttribute("message", "Invalid username or password.");
         return "/index.jsp"; // forward
