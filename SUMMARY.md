@@ -1,5 +1,9 @@
 
 * [导读](README.md)
+* Spring 实现数据的分层结构
+    * [JDBC实现数据接口的实现类](src/main/java/dao/impl/JDBCBookDaoImpl.java)	
+    * [MyBatis实现数据接口的实现类](src/main/java/dao/impl/MyBatisBookDaoImpl.java)	
+    * [数据实现的接口](src/main/java/dao/BookDao.java)	
 * Spring MVC + MyBaits实现和web页面的交互
     * [MVC配置后台的父类](src/main/java/controller/BaseController.java)	
     * [MVC配置用户表对应的后台](src/main/java/controller/UserController.java)	
