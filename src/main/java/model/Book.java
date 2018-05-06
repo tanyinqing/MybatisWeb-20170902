@@ -2,8 +2,8 @@ package model;
 
 import java.io.Serializable;
 
-public class Book implements Serializable {
-    // Ö÷¼üÓÃ·â×°Àà  ±È½Ï´óÓÃ ³¤ÕûĞÍ
+public class Book  {
+    // ä¸»é”®ç”¨å°è£…ç±»  æ¯”è¾ƒå¤§ç”¨ é•¿æ•´å‹
     private  Integer id;
     private  String title;
     private  double price;

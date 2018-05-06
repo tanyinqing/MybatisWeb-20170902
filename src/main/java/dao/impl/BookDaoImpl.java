@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class MyBatisBookDaoImpl implements BookDao {
+public class BookDaoImpl implements BookDao {
 
     @Autowired
     private SqlSession sqlSession;
