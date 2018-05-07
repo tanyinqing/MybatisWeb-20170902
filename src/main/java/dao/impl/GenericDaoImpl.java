@@ -21,11 +21,11 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
     @SuppressWarnings("unchecked")
     public GenericDaoImpl() {
         // Java语音的反射机制
+//       namespace="book";
         ParameterizedType parameterizedType = (ParameterizedType) getClass().getGenericSuperclass();
         Class<T> clazz = (Class<T>) parameterizedType.getActualTypeArguments()[0];
         namespace = clazz.getSimpleName().toLowerCase();
-       System.out.println(clazz); // Book, Person, User
-//        namespace="book";
+        System.out.println(clazz); // Book, Person, User
         System.out.println(namespace); // book, person, user
     }
 

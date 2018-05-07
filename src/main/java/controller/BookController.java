@@ -20,9 +20,10 @@ import java.util.Arrays;
 public class BookController extends BaseController {
    /* @Autowired
     private SqlSession sqlSession;*/
-    @Autowired
-    @Qualifier("bookDaoImpl")
+
+//    @Qualifier("bookDaoImpl")  用那一个版本
     //     @Qualifier("JDBCBookDaoImpl")
+@Autowired
     private BookDao bookDao;
 
     @RequestMapping("create")
