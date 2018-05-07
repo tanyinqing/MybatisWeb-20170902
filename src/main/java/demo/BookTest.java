@@ -1,5 +1,6 @@
 package demo;
 
+import dao.impl.GenericDaoImpl;
 import model.Book;
 import org.apache.ibatis.session.SqlSession;
 import util.MyBatisSession;
@@ -56,10 +57,15 @@ public class BookTest {
     }
 
     public static void main(String[] args) {
-       create();
+//       create();
 //        update();
 //        queryById();
         //       delete();
-       retrieve();
+//       retrieve();
+        //≤‚ ‘∑Ω∑®
+//        GenericDaoImpl<Book> genericDao=new GenericDaoImpl<>();
     }
+
+
+
 }

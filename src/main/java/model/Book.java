@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Book  {
+public class Book implements Serializable {
     // 主键用封装类  比较大用 长整型
     private  Integer id;
     private  String title;

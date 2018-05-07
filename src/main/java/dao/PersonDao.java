@@ -4,9 +4,9 @@ import model.Person;
 
 import java.util.List;
 
-public interface PersonDao {
+public interface PersonDao extends GenericDao<Person>{
 
-    // create
+   /* // create
     void create(Person person);
 
     // remove
@@ -20,5 +20,5 @@ public interface PersonDao {
 
     Person queryById(int id);
 
-    void removeSelected(int[] ids);
+    void removeSelected(int[] ids);*/
 }

@@ -93,7 +93,8 @@ public class BookController extends BaseController {
 //                sqlSession.delete("book.remove", id);
 //            }
 //        }
-        bookDao.removeBooks(ids);
+//        bookDao.removeBooks(ids);
+       bookDao.removeSelected(ids);
         return queryAll();
     }
 

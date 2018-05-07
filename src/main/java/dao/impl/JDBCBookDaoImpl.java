@@ -16,8 +16,9 @@ import java.util.List;
  * 运用jdbc方式进行查询
  */
 @Repository
-public class JDBCBookDaoImpl  implements BookDao {
-    @Override
+//public class JDBCBookDaoImpl  implements BookDao {
+public class JDBCBookDaoImpl  {
+   /* @Override
     public List<Book> queryAll() {
         Connection connection = DB.getConnection();
         String sql = "SELECT * FROM db.book ORDER BY id DESC";
@@ -49,6 +50,11 @@ public class JDBCBookDaoImpl  implements BookDao {
     }
 
     @Override
+    public void removeSelected(int[] ids) {
+
+    }
+
+    @Override
     public void create(Book book) {
 
     }
@@ -66,5 +72,5 @@ public class JDBCBookDaoImpl  implements BookDao {
     @Override
     public void removeBooks(int[] ids) {
 
-    }
+    }*/
 }

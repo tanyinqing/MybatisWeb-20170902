@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class BookDaoImpl implements BookDao {
-
+public class BookDaoImpl extends GenericDaoImpl<Book> implements BookDao<Book> {
+/*
     @Autowired
     private SqlSession sqlSession;
     @Override
@@ -44,5 +44,5 @@ public class BookDaoImpl implements BookDao {
         for (int id : ids) {
             remove(id);
         }
-    }
+    }*/
 }
