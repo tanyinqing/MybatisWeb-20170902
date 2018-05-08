@@ -1,10 +1,11 @@
 package model;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 
 public class Book implements Serializable {
     // 主键用封装类  比较大用 长整型
-    private  Integer id;
+    private  Integer id;//这个不能错  否则会出问题
     private  String title;
     private  double price;
     private  int amount;
@@ -13,6 +14,7 @@ public class Book implements Serializable {
     public Book() {
     }
 
+    //[java.lang.Integer, java.lang.String, java.math.BigDecimal, java.lang.Integer, java.sql.Date]
     public Book(Integer id, String title, double price, int amount, String pubTime) {
         this.id = id;
         this.title = title;

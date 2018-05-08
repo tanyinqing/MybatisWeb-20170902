@@ -22,5 +22,6 @@
     <input type="password" name="password" placeholder="Passsword" value="123"><br>
     <input type="submit" value="Sign up">
 </form>
+${requestScope.message}
 </body>
 </html>

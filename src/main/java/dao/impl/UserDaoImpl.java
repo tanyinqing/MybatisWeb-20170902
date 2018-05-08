@@ -26,4 +26,9 @@ public class UserDaoImpl implements UserDao {
     public User signIn(User user) {
         return  user = sqlSession.selectOne("mapper.UserMapper.signIn", user);
     }
+
+    @Override
+    public User queryByUsername(User user) {
+        return sqlSession.selectOne("mapper.UserMapper.queryByUsername", user);
+    }
 }

@@ -7,56 +7,65 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-@Repository
-public class GenericDaoImpl<T> implements GenericDao<T> {
+
+public class GenericDaoImpl<T extends Serializable,N extends Serializable> implements GenericDao<T,N> {
 
     @Autowired
     private SqlSession sqlSession;
 
     private String namespace;
 
+
     @SuppressWarnings("unchecked")
     public GenericDaoImpl() {
         // Java语音的反射机制
 //       namespace="book";
-        ParameterizedType parameterizedType = (ParameterizedType) getClass().getGenericSuperclass();
+       ParameterizedType parameterizedType = (ParameterizedType) getClass().getGenericSuperclass();
         Class<T> clazz = (Class<T>) parameterizedType.getActualTypeArguments()[0];
         namespace = clazz.getSimpleName().toLowerCase();
         System.out.println(clazz); // Book, Person, User
-        System.out.println(namespace); // book, person, user
+//        System.out.println(namespace); // book, person, user
+//        System.out.println(getClass().getGenericSuperclass());
     }
 
+    private String getStatement(String sqlId) {
+        return namespace.concat(".").concat(sqlId);
+    }
     @Override
     public void create(T t) {
-        sqlSession.insert(namespace + ".create", t);
+        System.out.println("jia ru yi ben shu--"+ getStatement("create"));
+        sqlSession.insert(getStatement("create"), t);
     }
 
     @Override
-    public void remove(int id) {
-        sqlSession.delete(namespace + ".remove", id);
+    public void remove(N id) {
+        sqlSession.delete(getStatement("remove"), id);
     }
 
     @Override
     public void update(T t) {
-        sqlSession.update(namespace + ".update", t);
+        sqlSession.update(getStatement("update"), t);
     }
+
 
     @Override
     public List<T> queryAll() {
-        return sqlSession.selectList(namespace + ".queryAll");
+        System.out.println("cha xun suo you tu shu");
+        return sqlSession.selectList(getStatement("queryAll"));
     }
 
     @Override
-    public T queryById(int id) {
-        return sqlSession.selectOne(namespace + ".queryById", id);
+    public T queryById(N id) {
+        return sqlSession.selectOne(getStatement("queryById"), id);
     }
 
     @Override
-    public void removeSelected(int[] ids) {
-        for (int id : ids) {
+    public void removeSelected(N[] ids) {
+        for (N id : ids) {
             remove(id);
         }
     }

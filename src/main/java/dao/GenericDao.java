@@ -1,16 +1,15 @@
 package dao;
 
-import model.Person;
-
+import java.io.Serializable;
 import java.util.List;
 
-public interface GenericDao<T> {
+public interface GenericDao<T extends Serializable,N extends Serializable> {
 
     // create
     void create(T t);
 
     // remove
-    void remove(int id);
+    void remove(N id);
 
     // update
     void update(T t);
@@ -18,7 +17,7 @@ public interface GenericDao<T> {
     // queryAll
     List<T> queryAll();
 
-    T queryById(int id);
+    T queryById(N id);
 
-    void removeSelected(int[] ids);
+    void removeSelected(N[] ids);
 }

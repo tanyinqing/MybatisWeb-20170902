@@ -11,5 +11,6 @@ import java.util.List;
 public interface UserDao {
     void signUp(User user);
     User signIn(User user);
+    User queryByUsername(User user);
 
 }

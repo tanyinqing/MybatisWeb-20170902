@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class BookDaoImpl<Book> extends GenericDaoImpl<Book> implements BookDao<Book> {
+public class BookDaoImpl extends GenericDaoImpl<Book,Integer> implements BookDao {
 /*
     @Autowired
     private SqlSession sqlSession;

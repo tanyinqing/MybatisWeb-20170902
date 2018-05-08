@@ -83,7 +83,7 @@ public class BookAction extends HttpServlet {
         int amount = Integer.parseInt(req.getParameter("amount"));
         String pubTime = req.getParameter("pubTime");
 
-        Book book = new Book(null, title, price, amount, pubTime);
+      Book book = new Book(null, title, price, amount, pubTime);
 
         try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
             sqlSession.insert("book.create", book);

@@ -34,6 +34,10 @@ public class UserController extends BaseController{//高级业务类
 //        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {//底层模块类
 //            sqlSession.insert("mapper.UserMapper.create", user);
 //        }
+        if (userDao.queryByUsername(user) != null) {
+            request.setAttribute("message", "username is existed.");
+            return "/sign_up.jsp";
+        }
         userDao.signUp(user);
         return "redirect:/index.jsp";
     }
@@ -51,8 +55,8 @@ public class UserController extends BaseController{//高级业务类
         user=userDao.signIn(user);
         if (user != null) {
             session.setAttribute("user",user);
-            //      return "redirect:/home.jsp";
-                      return "redirect:/book/queryAll";
+            //     return "redirect:/home.jsp";
+                   return "redirect:/book/queryAll";
         }
         request.setAttribute("message", "Invalid username or password.");
         return "/index.jsp"; // forward

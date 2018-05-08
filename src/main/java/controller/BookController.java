@@ -33,9 +33,10 @@ public class BookController extends BaseController {
 //        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
 //            sqlSession.insert("book.create", book);
 //        }
-//        return "redirect:/home.jsp";
         bookDao.create(book);
-        return queryAll();
+        // return "redirect:/home.jsp";
+            return queryAll();
+        //      return queryById(4);
     }
 
     @RequestMapping("queryAll")
@@ -85,7 +86,7 @@ public class BookController extends BaseController {
 
 
     @RequestMapping("removeBooks") //路径参数removeBooks
-    private String removeBooks(int[] ids) {
+    private String removeBooks(Integer[] ids) {
         System.out.println(Arrays.toString(ids));
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系  false 查询和事务无关

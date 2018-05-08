@@ -19,7 +19,7 @@
         UPDATE db.book SET title = #{title},price = #{price},amount = #{amount}, pubTime = #{pubTime}  WHERE id = #{id}
     </update>
 
-    <select id="queryById" resultType="model.Book" parameterType="int">
+    <select id="queryById" resultType="book" parameterType="int">
         SELECT * FROM db.book WHERE id=#{id}
     </select>
 

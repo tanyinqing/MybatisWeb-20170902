@@ -24,6 +24,12 @@
       SELECT * FROM db.user WHERE id=#{id}
     </select>
 
+    <select id="queryByUsername" parameterType="user" resultType="user">
+        SELECT *
+        FROM db.user
+        WHERE username = #{username}
+    </select>
+
     <select id="signIn" resultType="model.User"  parameterType="model.User">
       SELECT * FROM db.user WHERE username=#{username} AND password=#{password}
     </select>

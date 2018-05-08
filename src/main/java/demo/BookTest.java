@@ -1,8 +1,11 @@
 package demo;
 
+import dao.BookDao;
+import dao.impl.BookDaoImpl;
 import dao.impl.GenericDaoImpl;
 import model.Book;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import util.MyBatisSession;
 
 import java.util.List;
@@ -57,13 +60,16 @@ public class BookTest {
     }
 
     public static void main(String[] args) {
+
+
 //       create();
 //        update();
 //        queryById();
         //       delete();
 //       retrieve();
-        //≤‚ ‘∑Ω∑®
-//        GenericDaoImpl<Book> genericDao=new GenericDaoImpl<>();
+
+
+
     }
 
 

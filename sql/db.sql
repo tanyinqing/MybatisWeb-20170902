@@ -18,12 +18,12 @@ CREATE TABLE db.user (
 SELECT * FROM db.user;
 
 
-# 日期格式  2018.01.02  DECIMAL(8, 2)  表示两位小数
+# 日期格式  2018.01.02  DECIMAL(8, 2)  表示两位小数 bigInt对应长整型 UNIQUE 数据唯一
 DROP TABLE IF EXISTS db.book;
 CREATE TABLE db.book (
-  id      INT AUTO_INCREMENT PRIMARY KEY
+  id     INT AUTO_INCREMENT PRIMARY KEY
   COMMENT 'id PK',
-  title   VARCHAR(255)  NOT NULL UNIQUE
+  title   VARCHAR(255)  NOT NULL
   COMMENT 'title NN',
   price   DECIMAL(8, 2) NOT NULL
   COMMENT 'price NN',
