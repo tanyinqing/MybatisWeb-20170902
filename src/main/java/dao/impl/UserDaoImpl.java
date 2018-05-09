@@ -12,23 +12,23 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl extends GenericDaoImpl<User, Integer> implements UserDao {
 
-
+/*
     @Autowired
     private SqlSession sqlSession;
     @Override
-    public void signUp(User user) {
+    public void create(User user) {
         sqlSession.insert("mapper.UserMapper.create", user);
     }
 
     @Override
-    public User signIn(User user) {
+    public User query(User user) {
         return  user = sqlSession.selectOne("mapper.UserMapper.signIn", user);
     }
 
     @Override
     public User queryByUsername(User user) {
         return sqlSession.selectOne("mapper.UserMapper.queryByUsername", user);
-    }
+    }*/
 }

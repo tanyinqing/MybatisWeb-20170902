@@ -37,6 +37,14 @@ CREATE TABLE db.book (
 SELECT *
 FROM db.book;
 
+SELECT '123';
+# md5加密
+SELECT md5('123');
+
+/*
+ALTER TABLE db.book
+  AUTO_INCREMENT 2147483647;*/ -- int max value 让id从整型的最大值开始
+
 
 /*
 author  VARCHAR(255)  NOT NULL

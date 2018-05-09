@@ -1,6 +1,10 @@
 
 * [导读](README.md)
-* Spring 实现数据的分层结构
+* Spring 在数据层和业务层实现数据的分层结构
+    * [服务层的通用接口](src/main/java/service/GenericService.java)	
+    * [服务层的书籍表接口](src/main/java/service/BookService.java)	
+    * [服务层的通用接口实现类](src/main/java/service/impl/GenericServiceImpl.java)	
+* Spring 在数据层和数据库层实现数据的分层结构
     * [后台数据实现的通用接口](src/main/java/dao/GenericDao.java)	
     * [书籍表数据实现的接口](src/main/java/dao/BookDao.java)	
     * [所有表数据接口的实现类](src/main/java/dao/impl/GenericDaoImpl.java)	

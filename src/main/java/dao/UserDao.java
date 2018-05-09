@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * dao 数据访问对象
  */
-public interface UserDao {
-    void signUp(User user);
-    User signIn(User user);
-    User queryByUsername(User user);
+public interface UserDao extends GenericDao<User, Integer>{
+  /*  void create(User user);
+    User query(User user);
+    User queryByUsername(User user);*/
 
 }

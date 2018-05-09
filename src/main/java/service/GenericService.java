@@ -1,10 +1,11 @@
-package dao;
+package service;
+
+import service.impl.GenericServiceImpl;
 
 import java.io.Serializable;
 import java.util.List;
-//泛型有界参数
-public interface GenericDao<T extends Serializable,N extends Serializable> {
 
+public interface GenericService<T extends Serializable, N extends Serializable>{
     // create
     void create(T t);
 
@@ -20,6 +21,5 @@ public interface GenericDao<T extends Serializable,N extends Serializable> {
     T queryById(N id);
 
     void removeSelected(N[] ids);
-
-    T queryOne(String statement,Object parameters);
+    T queryOne(String statement, Object parameter);
 }

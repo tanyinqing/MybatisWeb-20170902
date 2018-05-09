@@ -69,4 +69,9 @@ public class GenericDaoImpl<T extends Serializable,N extends Serializable> imple
             remove(id);
         }
     }
+
+    @Override
+    public T queryOne(String statement, Object parameters) {
+        return sqlSession.selectOne(statement, parameters);
+    }
 }

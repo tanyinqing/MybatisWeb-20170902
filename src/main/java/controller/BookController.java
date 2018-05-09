@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import service.BookService;
 
 import java.util.Arrays;
 
@@ -23,8 +24,10 @@ public class BookController extends BaseController {
 
 //    @Qualifier("bookDaoImpl")  用那一个版本
     //     @Qualifier("JDBCBookDaoImpl")
-@Autowired
-    private BookDao bookDao;
+/*@Autowired
+    private BookDao bookDao;*/
+    @Autowired
+    private BookService bookService;
 
     @RequestMapping("create")
     private String create(Book book) {
@@ -33,7 +36,7 @@ public class BookController extends BaseController {
 //        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
 //            sqlSession.insert("book.create", book);
 //        }
-        bookDao.create(book);
+        bookService.create(book);
         // return "redirect:/home.jsp";
             return queryAll();
         //      return queryById(4);
@@ -47,7 +50,7 @@ public class BookController extends BaseController {
 //            session.setAttribute("books", sqlSession.selectList("book.queryAll"));
 //        }
 
-        session.setAttribute("books",bookDao.queryAll());
+        session.setAttribute("books",bookService.queryAll());
         return "redirect:/home.jsp";
     }
 
@@ -58,7 +61,7 @@ public class BookController extends BaseController {
 //        try (SqlSession sqlSession = MyBatisSession.getSqlSession(false)) {
 //            session.setAttribute("book", sqlSession.selectOne("book.queryById", id));
 //        }
-        session.setAttribute("book", bookDao.queryById(id));
+        session.setAttribute("book", bookService.queryById(id));
         return "redirect:/edit.jsp";
     }
 
@@ -69,7 +72,7 @@ public class BookController extends BaseController {
 //        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
 //            sqlSession.update("book.update", book);
 //        }
-        bookDao.update(book);
+        bookService.update(book);
         return queryAll();
     }
 
@@ -80,7 +83,7 @@ public class BookController extends BaseController {
 //        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
 //            sqlSession.delete("book.remove", id);
 //        }
-        bookDao.remove(id);
+        bookService.remove(id);
         return queryAll();
     }
 
@@ -96,7 +99,7 @@ public class BookController extends BaseController {
 //            }
 //        }
 //        bookDao.removeBooks(ids);
-       bookDao.removeSelected(ids);
+        bookService.removeSelected(ids);
         return queryAll();
     }
 

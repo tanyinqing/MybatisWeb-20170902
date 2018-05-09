@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--这个是映射文件 定义sql语句  对应的必须是全限定名  对应的名称空间-->
-<mapper namespace="mapper.UserMapper">
+<mapper namespace="user">
     <insert id="create" parameterType="model.User" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO db.user VALUES (NULL, #{username}, #{password})
+        INSERT INTO db.user VALUES (NULL, #{username},md5(#{password}))
     </insert>
 
     <update id="modify" parameterType="model.User">
