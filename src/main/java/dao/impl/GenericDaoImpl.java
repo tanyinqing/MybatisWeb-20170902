@@ -37,7 +37,7 @@ public class GenericDaoImpl<T extends Serializable,N extends Serializable> imple
     }
     @Override
     public void create(T t) {
-        System.out.println("jia ru yi ben shu--"+ getStatement("create"));
+//        System.out.println("jia ru yi ben shu--"+ getStatement("create"));
         sqlSession.insert(getStatement("create"), t);
     }
 
@@ -54,7 +54,7 @@ public class GenericDaoImpl<T extends Serializable,N extends Serializable> imple
 
     @Override
     public List<T> queryAll() {
-        System.out.println("cha xun suo you tu shu");
+//        System.out.println("cha xun suo you tu shu");
         return sqlSession.selectList(getStatement("queryAll"));
     }
 
