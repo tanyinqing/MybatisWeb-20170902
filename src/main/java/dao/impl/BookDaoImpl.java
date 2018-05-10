@@ -2,11 +2,7 @@ package dao.impl;
 
 import dao.BookDao;
 import model.Book;
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public class BookDaoImpl extends GenericDaoImpl<Book,Integer> implements BookDao {

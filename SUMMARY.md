@@ -19,7 +19,7 @@
   * [第二个加载网络文件](src/main/webapp/WEB-INF/web-servlet.xml)  
 * 数据库相关     
     * [创建数据库SQL语句](sql/db.sql)	
-* spring框架IoC_DI控制反转的理解
+* spring框架IoC_DI控制反转的理解和添加spring配置文件
    * [spring的配置文件](src/main/resources/applicationContext.xml)	
    * [配置文件的使用](src/main/java/ioc/c/Test.java)	 
    * [spring的第二个配置文件](src/main/resources/beans.xml)	
@@ -36,14 +36,14 @@
     * [图书表对应的后台](src/main/java/action/BookAction.java)	
 * MyBaits框架配置图书对应的数据库表   映射文件  
     * [配置测试类](src/main/java/demo/BookTest.java)	
-    * [配置实体类和数据库表对应](src/main/java/model/Book.java)	
+    * [配置实体类和数据库表对应](src/main/java/demo.model/Book.java)	
     * [配置数据库映射语句  并要加载进来](src/main/resources/book-mapper.xml)	
 * 配置grade文件     
     * [配置grade文件](build.gradle)	
 * mybatis框架的初始化java配置和测试   
     * [配置测试类](src/main/java/demo/MyBatisTest.java)	
     * [配置工具类 以后可以没有](src/main/java/util/MyBatisSession.java)	
-    * [配置实体类和数据库表对应](src/main/java/model/User.java)	
+    * [配置实体类和数据库表对应](src/main/java/demo.model/User.java)	
     * [配置接口](src/main/java/mapper/UserMapper.java)	
 * 初始化mybatis框架的数据库资源配置  
     * [配置数据库账号的属性](src/main/resources/jdbc.properties)	

@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class Book implements Serializable {
     // 主键用封装类  比较大用 长整型
@@ -10,17 +9,19 @@ public class Book implements Serializable {
     private  double price;
     private  int amount;
     private  String pubTime;
+    private  int userId;
 
     public Book() {
     }
 
     //[java.lang.Integer, java.lang.String, java.math.BigDecimal, java.lang.Integer, java.sql.Date]
-    public Book(Integer id, String title, double price, int amount, String pubTime) {
+    public Book(Integer id, String title, double price, int amount, String pubTime, int userId) {
         this.id = id;
         this.title = title;
         this.price = price;
         this.amount = amount;
         this.pubTime = pubTime;
+        this.userId = userId;
     }
 
     @Override
@@ -31,7 +32,16 @@ public class Book implements Serializable {
                 ", price=" + price +
                 ", amount=" + amount +
                 ", pubTime='" + pubTime + '\'' +
+                ", userId='" + userId + '\'' +
                 '}';
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public Integer getId() {

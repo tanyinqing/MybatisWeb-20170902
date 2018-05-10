@@ -1,16 +1,6 @@
 package dao.impl;
 
-import dao.BookDao;
-import model.Book;
 import org.springframework.stereotype.Repository;
-import util.DB;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * 运用jdbc方式进行查询

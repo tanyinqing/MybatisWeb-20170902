@@ -30,23 +30,29 @@ CREATE TABLE db.book (
   amount  INT           NOT NULL
   COMMENT 'amount NN',
   pubTime DATE          NOT NULL
-  COMMENT 'publish time NN'
+  COMMENT 'publish time NN',
+  userId INT COMMENT 'user id FK'
 )
   COMMENT 'book table';
+
+# 生成数据库的外键
+ALTER  TABLE  db.book
+  ADD CONSTRAINT
+book_fk_userId
+FOREIGN KEY (userId)
+  REFERENCES db.user(id);
+
 
 SELECT *
 FROM db.book;
 
+/*
 SELECT '123';
 # md5加密
-SELECT md5('123');
+SELECT md5('123');*/
 
 /*
 ALTER TABLE db.book
   AUTO_INCREMENT 2147483647;*/ -- int max value 让id从整型的最大值开始
 
 
-/*
-author  VARCHAR(255)  NOT NULL
-COMMENT 'author NN',
-*/

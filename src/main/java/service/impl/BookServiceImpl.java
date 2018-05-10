@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import service.BookService;
 
+import java.util.List;
+
 @Service
 public class BookServiceImpl extends GenericServiceImpl<Book, Integer> implements BookService {
     //    值的实例化  自动装配
@@ -17,4 +19,8 @@ public class BookServiceImpl extends GenericServiceImpl<Book, Integer> implement
         super.genericDao = genericDao;
     }
 
+    @Override
+    public List<Book> queryAll(String statement, Object parameter) {
+        return null;
+    }
 }

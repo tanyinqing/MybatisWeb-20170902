@@ -1,11 +1,8 @@
 package dao.impl;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import dao.GenericDao;
-import model.Book;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -56,6 +53,11 @@ public class GenericDaoImpl<T extends Serializable,N extends Serializable> imple
     public List<T> queryAll() {
 //        System.out.println("cha xun suo you tu shu");
         return sqlSession.selectList(getStatement("queryAll"));
+    }
+
+    @Override
+    public List<T> queryAll(String statement, Object parameter) {
+        return sqlSession.selectList(statement,parameter);
     }
 
     @Override

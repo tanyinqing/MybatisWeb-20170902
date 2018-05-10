@@ -1,11 +1,7 @@
 package demo;
 
-import dao.BookDao;
-import dao.impl.BookDaoImpl;
-import dao.impl.GenericDaoImpl;
 import model.Book;
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import util.MyBatisSession;
 
 import java.util.List;
@@ -15,7 +11,7 @@ public class BookTest {
     private static int create() {
 //        try 后的语句会自动关闭资源 实现了 AutoCloseable接口
         try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
-            return sqlSession.insert("book.create", new Book(null, "title2..", 123.456,100,"2018-04-09"));
+            return sqlSession.insert("book.create", new Book(null, "title2..", 123.456,100,"2018-04-09",1));
         }
 
     }
@@ -53,7 +49,7 @@ public class BookTest {
     private static void update() {
 //        try 后的语句会自动关闭资源 实现了 AutoCloseable接口
         try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
-           sqlSession.selectOne("book.update",new Book(1,"new title",123.00,10,"2018-4-9"));
+           sqlSession.selectOne("book.update",new Book(1,"new title",123.00,10,"2018-4-9",1));
 
         }
 

@@ -2,8 +2,6 @@ package dao;
 
 import model.Book;
 
-import java.util.List;
-
 /**
  * dao 数据访问对象
  */

@@ -17,6 +17,8 @@ public interface GenericDao<T extends Serializable,N extends Serializable> {
     // queryAll
     List<T> queryAll();
 
+    List<T> queryAll(String statement,Object parameter);
+
     T queryById(N id);
 
     void removeSelected(N[] ids);

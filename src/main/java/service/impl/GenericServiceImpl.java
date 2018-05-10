@@ -32,6 +32,11 @@ public abstract class GenericServiceImpl<T extends Serializable, N extends Seria
     }
 
     @Override
+    public List<T> queryAll(String statement, Object parameter) {
+        return genericDao.queryAll(statement,parameter);
+    }
+
+    @Override
     public T queryById(N id) {
         return genericDao.queryById(id);
     }

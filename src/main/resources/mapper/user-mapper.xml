@@ -20,7 +20,7 @@
       SELECT * FROM db.user ORDER BY id DESC
     </select>
 
-    <select id="queryById" resultType="model.User"  parameterType="int">
+    <select id="queryById" resultType="model.User" parameterType="int">
       SELECT * FROM db.user WHERE id=#{id}
     </select>
 
@@ -30,7 +30,7 @@
         WHERE username = #{username}
     </select>
 
-    <select id="signIn" resultType="model.User"  parameterType="model.User">
+    <select id="signIn" resultType="model.User" parameterType="model.User">
       SELECT * FROM db.user WHERE username=#{username} AND password=#{password}
     </select>
 

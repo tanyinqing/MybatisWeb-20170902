@@ -7,7 +7,7 @@
     <!--<insert id="create" parameterType="model.Book" useGeneratedKeys="true" keyProperty="id">-->
    <!--类名的小写自动匹配-->
     <insert id="create" parameterType="book" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO db.book VALUES (NULL, #{title}, #{price},#{amount},#{pubTime})
+        INSERT INTO db.book VALUES (NULL, #{title}, #{price},#{amount},#{pubTime},#{userId})
     </insert>
 
     <!--<select id="queryAll" resultType="model.Book" >-->
