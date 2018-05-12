@@ -29,6 +29,7 @@ ${sessionScope.user.username}
 <form action="/book/create" method="post">
 <%--<form action="/book" method="post">--%>
     <%--<input type="hidden" name="action" value="create">--%>
+    <input type="hidden" name="userId" value="${sessionScope.user.id}">
     <input name="title" placeholder="Title" value="title1"><br>
     <input name="price" placeholder="Price" value="11.2"><br>
     <input name="amount" placeholder="Amount" value="100"><br>

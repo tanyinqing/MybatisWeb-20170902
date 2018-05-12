@@ -1,6 +1,7 @@
 package controller;
 
 import model.Book;
+import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,7 +48,8 @@ public class BookController extends BaseController {
 //        try (SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {
 //            session.setAttribute("books", sqlSession.selectList("book.queryAll"));
 //        }
-
+        User user= (User) session.getAttribute("user");
+//        session.setAttribute("books",bookService.queryAll("",user.getId()));
         session.setAttribute("books",bookService.queryAll());
         return "redirect:/home.jsp";
     }
