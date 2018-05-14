@@ -27,6 +27,11 @@
         DELETE FROM db.book WHERE id=#{id}
     </delete>
 
+    <select id="queryBooksByUserId" parameterType="int" resultType="book">
+        SELECT *
+        FROM db.book
+        WHERE userId = #{userId}
+    </select>
 
     <!-- <update id="remove" parameterType="int">
        DELETE FROM db.user WHERE id=#{id}

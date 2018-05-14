@@ -38,8 +38,5 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
         return null;
     }
 
-    @Override
-    public List<User> queryAll(String statement, Object parameter) {
-        return null;
-    }
+
 }

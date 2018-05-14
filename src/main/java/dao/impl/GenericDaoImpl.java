@@ -76,4 +76,9 @@ public class GenericDaoImpl<T extends Serializable,N extends Serializable> imple
     public T queryOne(String statement, Object parameters) {
         return sqlSession.selectOne(statement, parameters);
     }
+
+    @Override
+    public List<T> queryList(String statement, Object parameter) {
+        return sqlSession.selectList(getStatement(statement), parameter);
+    }
 }

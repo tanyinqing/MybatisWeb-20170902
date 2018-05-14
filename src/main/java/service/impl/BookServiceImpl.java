@@ -19,8 +19,7 @@ public class BookServiceImpl extends GenericServiceImpl<Book, Integer> implement
         super.genericDao = genericDao;
     }
 
-    @Override
-    public List<Book> queryAll(String statement, Object parameter) {
-        return null;
-    }
+
+
+
 }

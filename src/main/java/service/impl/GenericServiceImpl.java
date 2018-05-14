@@ -50,4 +50,9 @@ public abstract class GenericServiceImpl<T extends Serializable, N extends Seria
     public T queryOne(String statement, Object parameter) {
         return genericDao.queryOne(statement, parameter);
     }
+
+    @Override
+    public List<T> queryList(String statement, Object parameter) {
+        return genericDao.queryList(statement, parameter);
+    }
 }

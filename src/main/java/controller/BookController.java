@@ -49,8 +49,8 @@ public class BookController extends BaseController {
 //            session.setAttribute("books", sqlSession.selectList("book.queryAll"));
 //        }
         User user= (User) session.getAttribute("user");
-//        session.setAttribute("books",bookService.queryAll("",user.getId()));
-        session.setAttribute("books",bookService.queryAll());
+       session.setAttribute("books",bookService.queryList("queryBooksByUserId",user.getId()));
+//         session.setAttribute("books",bookService.queryAll());
         return "redirect:/home.jsp";
     }
 

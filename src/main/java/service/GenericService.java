@@ -23,4 +23,5 @@ public interface GenericService<T extends Serializable, N extends Serializable>{
 
     void removeSelected(N[] ids);
     T queryOne(String statement, Object parameter);
+    List<T> queryList(String statement, Object parameter);
 }
