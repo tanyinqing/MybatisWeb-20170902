@@ -1,12 +1,14 @@
 package model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class User implements Serializable {
     // 主键用封装类  比较大用 长整型
     private  Integer id;
     private  String username;
     private  String password;
+    private List<Book> books;
 
     public User() {
     }
@@ -23,7 +25,16 @@ public class User implements Serializable {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", books=" + books +
                 '}';
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     public Integer getId() {

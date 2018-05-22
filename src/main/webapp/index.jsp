@@ -27,5 +27,7 @@
   <p>
     <a href="sign_up.jsp">Sign up</a>
   </p>
+  <hr>
+  <p><a href="/user/queryAll">List all users</a></p>
   </body>
 </html>

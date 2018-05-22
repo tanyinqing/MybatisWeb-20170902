@@ -34,6 +34,27 @@
       SELECT * FROM db.user WHERE username=#{username} AND password=#{password}
     </select>
 
+    <!--property 域的名字  column 数据库字段名-->
+     <resultMap id="queryBooksByUserId_map" type="user">
+        <result property="username" column="username"/>
+        <collection property="books" ofType="book">
+            <result property="title" column="title"/>
+            <result property="price" column="price"/>
+            <result property="amount" column="amount"/>
+            <result property="pubTime" column="pubTime"/>
+            <result property="userId" column="userId"/>
+            <result property="id" column="id"/>
+        </collection>
+    </resultMap>
+    <select id="userQueryBooksByUserId" parameterType="int" resultMap="queryBooksByUserId_map">
+        SELECT
+            u.username,
+            b.*
+        FROM db.user AS u INNER JOIN db.book b
+                ON u.id = b.userId
+        WHERE u.id = #{id}
+    </select>
+
     <!-- <update id="remove" parameterType="int">
        DELETE FROM db.user WHERE id=#{id}
     </update>-->

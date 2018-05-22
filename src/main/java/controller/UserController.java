@@ -3,6 +3,7 @@ package controller;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import service.UserService;
 
@@ -80,5 +81,22 @@ public class UserController extends BaseController{//高级业务类
         session.invalidate();
         return "redirect:/index.jsp";
     }
+
+    @RequestMapping("queryAll")
+    private String queryAll() {
+        //    session.setAttribute("users",userService.queryList("queryAll",null));
+            session.setAttribute("users",userService.queryAll());
+        return "redirect:/users.jsp";
+    }
+
+
+    @RequestMapping("queryBooksByUserId/{id}")
+    private String queryBooksByUserId(@PathVariable int id) {
+        session.setAttribute("user", userService.queryOne("userQueryBooksByUserId", id));
+//        System.out.println(userService.queryOne("userQueryBooksByUserId", id).toString());
+        return "redirect:/userBooks.jsp";
+    }
+
+
 
 }

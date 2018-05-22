@@ -1,6 +1,7 @@
 
 DROP DATABASE IF EXISTS db;
 CREATE DATABASE db;
+CREATE DATABASE shop;
 
 DROP TABLE IF EXISTS db.user;
 CREATE TABLE db.user (
@@ -45,6 +46,17 @@ FOREIGN KEY (userId)
 
 SELECT *
 FROM db.book;
+
+# 联合查询
+SELECT u.username,b.*
+FROM db.user AS u INNER JOIN db.book AS b ON u.id=b.userId WHERE u.id=3;
+
+SELECT
+  u.username,
+  b.title, b.price, b.amount, b.pubTime
+FROM db.user AS u INNER JOIN db.book AS b
+    ON u.id = b.userId
+WHERE u.id = 1;
 
 /*
 SELECT '123';
