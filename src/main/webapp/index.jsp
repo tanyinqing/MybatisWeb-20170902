@@ -28,6 +28,8 @@
     <a href="sign_up.jsp">Sign up</a>
   </p>
   <hr>
-  <p><a href="/user/queryAll">List all users</a></p>
+  <p><a href="/user/queryAll">列出所有的用户，并查处他对应的图书</a></p>
+  <p><a href="/user/queryAllUsers">同时列出所有的用户，和对应的所有图书</a></p>
+  <p><a href="/book/queryAllBooks">查询所有图书</a></p>
   </body>
 </html>

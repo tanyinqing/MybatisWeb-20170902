@@ -31,6 +31,11 @@
   * [主页](src/main/webapp/home.jsp)	    
   * [登录页面](src/main/webapp/index.jsp)	    
   * [图书编辑](src/main/webapp/edit.jsp)	    
+  * [显示全部的图书](src/main/webapp/books.jsp)	    
+  * [显示该图书对应的用户](src/main/webapp/book.jsp)	    
+  * [显示所有的用户](src/main/webapp/users.jsp)	    
+  * [显示一个用户对应的图书](src/main/webapp/userBooks.jsp)	    
+  * [显示多个用户和他所对应的图书](src/main/webapp/userAndBooks.jsp)	    
 * MyBaits框架配置后台方法这个比较少用     
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
     * [图书表对应的后台](src/main/java/action/BookAction.java)	

@@ -10,6 +10,7 @@ public class Book implements Serializable {
     private  int amount;
     private  String pubTime;
     private  int userId;
+    private  User  user;
 
     public Book() {
     }
@@ -34,6 +35,14 @@ public class Book implements Serializable {
                 ", pubTime='" + pubTime + '\'' +
                 ", userId='" + userId + '\'' +
                 '}';
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getUserId() {

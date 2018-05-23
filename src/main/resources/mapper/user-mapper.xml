@@ -34,6 +34,28 @@
       SELECT * FROM db.user WHERE username=#{username} AND password=#{password}
     </select>
 
+    <resultMap id="queryAllUsers_map" type="user">
+        <result property="username" column="username"/>
+        <collection property="books" ofType="book">
+            <result property="id" column="id"/>
+            <result property="title" column="title"/>
+            <result property="price" column="price"/>
+            <result property="amount" column="amount"/>
+            <result property="pubTime" column="pubTime"/>
+        </collection>
+    </resultMap>
+    <select id="queryAllUsers" parameterType="int" resultMap="queryAllUsers_map">
+        SELECT
+        u.username,
+        b.id,
+        b.title,
+        b.price,
+        b.amount,
+        b.pubTime
+        FROM db.user AS u LEFT OUTER JOIN db.book b
+        ON u.id = b.userId
+    </select>
+
     <resultMap id="queryBooksByUserId_map" type="user">
         <result property="username" column="username"/>
         <collection property="books" ofType="book">
@@ -52,7 +74,7 @@
         b.price,
         b.amount,
         b.pubTime
-        FROM db.user AS u INNER JOIN db.book b
+        FROM db.user AS u LEFT OUTER JOIN  db.book b
         ON u.id = b.userId
         WHERE u.id = #{id}
     </select>

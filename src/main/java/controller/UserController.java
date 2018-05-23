@@ -89,6 +89,11 @@ public class UserController extends BaseController{//高级业务类
         return "redirect:/users.jsp";
     }
 
+    @RequestMapping("queryAllUsers")
+    private String queryAllUsers() {
+        session.setAttribute("users", userService.queryList("queryAllUsers", null));
+        return "redirect:/userAndBooks.jsp";
+    }
 
     @RequestMapping("queryBooksByUserId/{id}")
     private String queryBooksByUserId(@PathVariable int id) {

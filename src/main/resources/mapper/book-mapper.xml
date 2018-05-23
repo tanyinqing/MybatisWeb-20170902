@@ -33,6 +33,27 @@
         WHERE userId = #{userId}
     </select>
 
+    <resultMap id="queryUserByBookId_map" type="book">
+        <result property="title" column="title"/>
+        <result property="price" column="price"/>
+        <result property="amount" column="amount"/>
+        <result property="pubTime" column="pubTime"/>
+        <association property="user" javaType="user">
+            <result property="username" column="username"/>
+        </association>
+    </resultMap>
+    <select id="queryUserByBookId" resultMap="queryUserByBookId_map">
+        SELECT
+        b.title,
+        b.price,
+        b.amount,
+        b.pubTime,
+        u.username
+        FROM db.book AS b INNER JOIN db.user AS u
+        ON b.userId = u.id
+        WHERE b.id = #{id}
+    </select>
+
     <!-- <update id="remove" parameterType="int">
        DELETE FROM db.user WHERE id=#{id}
     </update>-->

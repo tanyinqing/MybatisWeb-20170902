@@ -49,7 +49,7 @@ FROM db.book;
 
 # 联合查询
 SELECT u.username,b.*
-FROM db.user AS u INNER JOIN db.book AS b ON u.id=b.userId WHERE u.id=3;
+FROM db.user AS u  LEFT OUTER JOIN  db.book AS b ON u.id=b.userId WHERE u.id=3;
 
 SELECT
   u.username,

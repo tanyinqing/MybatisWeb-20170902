@@ -103,5 +103,15 @@ public class BookController extends BaseController {
         return queryAll();
     }
 
+    @RequestMapping("queryAllBooks")
+    private String queryAllbooks() {
+        session.setAttribute("books", bookService.queryAll());
+        return "redirect:/books.jsp";
+    }
 
+    @RequestMapping("queryUserByBookId/{id}")
+    private String queryUserByBookId(@PathVariable int id) {
+        session.setAttribute("book", bookService.queryOne("queryUserByBookId", id));
+        return "redirect:/book.jsp";
+    }
 }
