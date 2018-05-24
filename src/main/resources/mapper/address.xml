@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--这个是映射文件 定义sql语句  对应的必须是全限定名  对应的名称空间 useGeneratedKeys 主键 -->
+<mapper namespace="address">
+
+    <insert id="create" parameterType="address" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO db.address
+        VALUE (NULL, #{detail}, #{userId})
+    </insert>
+
+</mapper>

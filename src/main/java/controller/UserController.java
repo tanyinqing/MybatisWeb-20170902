@@ -102,6 +102,10 @@ public class UserController extends BaseController{//高级业务类
         return "redirect:/userBooks.jsp";
     }
 
-
+    @RequestMapping("toCreateAddress")
+    private String toCreateAddress() {
+        session.setAttribute("users", userService.queryAll());
+        return "redirect:/createAddress.jsp";
+    }
 
 }

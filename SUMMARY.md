@@ -36,6 +36,7 @@
   * [显示所有的用户](src/main/webapp/users.jsp)	    
   * [显示一个用户对应的图书](src/main/webapp/userBooks.jsp)	    
   * [显示多个用户和他所对应的图书](src/main/webapp/userAndBooks.jsp)	    
+  * [创建地址和用户的对应关系](src/main/webapp/createAddress.jsp)	    
 * MyBaits框架配置后台方法这个比较少用     
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
     * [图书表对应的后台](src/main/java/action/BookAction.java)	

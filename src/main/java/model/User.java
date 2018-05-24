@@ -9,6 +9,7 @@ public class User implements Serializable {
     private  String username;
     private  String password;
     private List<Book> books;
+    private  int addressId;
 
     public User() {
     }
@@ -17,6 +18,8 @@ public class User implements Serializable {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.books = books;
+        this.addressId = addressId;
     }
 
     @Override
@@ -27,6 +30,14 @@ public class User implements Serializable {
                 ", password='" + password + '\'' +
                 ", books=" + books +
                 '}';
+    }
+
+    public int getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
     }
 
     public List<Book> getBooks() {

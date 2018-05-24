@@ -1,7 +1,7 @@
 
 DROP DATABASE IF EXISTS db;
 CREATE DATABASE db;
-CREATE DATABASE shop;
+# CREATE DATABASE shop;
 
 DROP TABLE IF EXISTS db.user;
 CREATE TABLE db.user (
@@ -10,7 +10,8 @@ CREATE TABLE db.user (
   username VARCHAR(255) NOT NULL UNIQUE
   COMMENT 'username',
   password VARCHAR(255) NOT NULL
-  COMMENT 'password'
+  COMMENT 'password',
+  addressId INT COMMENT 'addressId id FK'
 )
   COMMENT 'user table';
 
@@ -46,6 +47,37 @@ FOREIGN KEY (userId)
 
 SELECT *
 FROM db.book;
+
+DROP TABLE IF EXISTS db.address;
+CREATE TABLE db.address (
+  id  INT AUTO_INCREMENT PRIMARY KEY
+  COMMENT 'id PK',
+  detail   VARCHAR(255)  NOT NULL
+  COMMENT 'detail NN',
+  userId INT COMMENT 'user id FK'
+)
+  COMMENT 'book table';
+
+
+# 生成数据库的外键
+ALTER  TABLE  db.address
+  ADD CONSTRAINT
+  address_fk_userId
+FOREIGN KEY (userId)
+REFERENCES db.user(id);
+
+
+# 生成数据库的外键
+ALTER  TABLE  db.user
+  ADD CONSTRAINT
+  user_fk_addressId
+FOREIGN KEY (addressId)
+REFERENCES db.address(id);
+
+SELECT *
+FROM db.address;
+
+
 
 # 联合查询
 SELECT u.username,b.*

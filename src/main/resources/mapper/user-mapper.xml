@@ -4,12 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--这个是映射文件 定义sql语句  对应的必须是全限定名  对应的名称空间-->
 <mapper namespace="user">
-    <insert id="create" parameterType="model.User" useGeneratedKeys="true" keyProperty="id">
+   <!-- <insert id="create" parameterType="model.User" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO db.user VALUES (NULL, #{username},md5(#{password}))
+    </insert>-->
+
+    <insert id="create" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO db.user(username, password)
+        VALUE (#{username}, md5(#{password}))
     </insert>
 
     <update id="modify" parameterType="model.User">
         UPDATE db.user SET username = #{username}, password = #{password}  WHERE id = #{id}
+    </update>
+
+    <update id="update" parameterType="user">
+        UPDATE db.user
+        SET
+        username  = #{username},
+        password  = #{password},
+        addressId = #{addressId}
+        WHERE id = #{id}
     </update>
 
     <update id="remove" parameterType="model.User">
