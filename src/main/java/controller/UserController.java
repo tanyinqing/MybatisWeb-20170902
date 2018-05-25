@@ -89,6 +89,12 @@ public class UserController extends BaseController{//高级业务类
         return "redirect:/users.jsp";
     }
 
+    @RequestMapping("queryAll1")
+    private String queryAll1() {
+        session.setAttribute("users", userService.queryAll());
+        return "redirect:/users1.jsp";
+    }
+
     @RequestMapping("queryAllUsers")
     private String queryAllUsers() {
         session.setAttribute("users", userService.queryList("queryAllUsers", null));
@@ -108,4 +114,9 @@ public class UserController extends BaseController{//高级业务类
         return "redirect:/createAddress.jsp";
     }
 
+    @RequestMapping("userAddress/{id}")
+    private String userAddress(@PathVariable int id) {
+        session.setAttribute("user", userService.queryOne("userAddress", id));
+        return "redirect:/userAddress.jsp";
+    }
 }

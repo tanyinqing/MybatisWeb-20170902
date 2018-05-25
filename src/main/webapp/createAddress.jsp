@@ -23,5 +23,6 @@
     </select>
     <input type="submit" value="Add">
 </form>
+${requestScope.message}
 </body>
 </html>

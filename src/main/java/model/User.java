@@ -10,7 +10,7 @@ public class User implements Serializable {
     private  String password;
     private List<Book> books;
     private  int addressId;
-
+    private Address address;
     public User() {
     }
 
@@ -30,6 +30,14 @@ public class User implements Serializable {
                 ", password='" + password + '\'' +
                 ", books=" + books +
                 '}';
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public int getAddressId() {

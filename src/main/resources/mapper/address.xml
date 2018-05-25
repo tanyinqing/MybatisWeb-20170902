@@ -10,4 +10,9 @@
         VALUE (NULL, #{detail}, #{userId})
     </insert>
 
+    <select id="queryAll" resultType="address">
+        SELECT *
+        FROM db.address
+        ORDER BY id DESC
+    </select>
 </mapper>

@@ -11,7 +11,7 @@ CREATE TABLE db.user (
   COMMENT 'username',
   password VARCHAR(255) NOT NULL
   COMMENT 'password',
-  addressId INT COMMENT 'addressId id FK'
+  addressId INT UNIQUE COMMENT 'addressId id FK'
 )
   COMMENT 'user table';
 
@@ -54,7 +54,7 @@ CREATE TABLE db.address (
   COMMENT 'id PK',
   detail   VARCHAR(255)  NOT NULL
   COMMENT 'detail NN',
-  userId INT COMMENT 'user id FK'
+  userId INT UNIQUE COMMENT 'user id FK'
 )
   COMMENT 'book table';
 

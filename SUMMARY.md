@@ -3,16 +3,20 @@
 * Spring 在数据层和业务层实现数据的分层结构
     * [服务层的通用接口](src/main/java/service/GenericService.java)	
     * [服务层的书籍表接口](src/main/java/service/BookService.java)	
+    * [服务层的地址表接口](src/main/java/service/AddressService.java)	
     * [服务层的通用接口实现类](src/main/java/service/impl/GenericServiceImpl.java)	
 * Spring 在数据层和数据库层实现数据的分层结构
     * [后台数据实现的通用接口](src/main/java/dao/GenericDao.java)	
     * [书籍表数据实现的接口](src/main/java/dao/BookDao.java)	
+    * [地址表数据实现的接口](src/main/java/dao/AddressDao.java)	
     * [所有表数据接口的实现类](src/main/java/dao/impl/GenericDaoImpl.java)	
     * [MyBatis书籍表数据接口的实现类](src/main/java/dao/impl/BookDaoImpl.java)	
+    * [MyBatis地址表数据接口的实现类](src/main/java/dao/impl/AddressDaoImpl.java)	
     * [JDBC书籍表数据接口的实现类](src/main/java/dao/impl/JDBCBookDaoImpl.java)	
 * Spring MVC + MyBaits实现和web页面的交互
     * [MVC配置后台的父类](src/main/java/controller/BaseController.java)	
     * [MVC配置用户表对应的后台](src/main/java/controller/UserController.java)	
+    * [MVC配置地址表对应的后台](src/main/java/controller/AddressController.java)	
     * [MVC配置图书表对应的后台](src/main/java/controller/BookController.java)	  
 * spring框架webMVC网络框架文件的加载
   * [加载网络文件](src/main/webapp/WEB-INF/web.xml)  
@@ -33,7 +37,10 @@
   * [图书编辑](src/main/webapp/edit.jsp)	    
   * [显示全部的图书](src/main/webapp/books.jsp)	    
   * [显示该图书对应的用户](src/main/webapp/book.jsp)	    
-  * [显示所有的用户](src/main/webapp/users.jsp)	    
+  * [显示全部的地址](src/main/webapp/addresses.jsp)	    
+  * [显示所选用户和地址的对应关系](src/main/webapp/userAddress.jsp)	    
+  * [显示所有的用户点击是用户对应的图书](src/main/webapp/users.jsp)	    
+  * [显示所有的用户点击是用户对应的地址](src/main/webapp/users1.jsp)	    
   * [显示一个用户对应的图书](src/main/webapp/userBooks.jsp)	    
   * [显示多个用户和他所对应的图书](src/main/webapp/userAndBooks.jsp)	    
   * [创建地址和用户的对应关系](src/main/webapp/createAddress.jsp)	    

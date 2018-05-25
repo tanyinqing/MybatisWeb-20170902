@@ -29,12 +29,22 @@ public class AddressController extends BaseController {
 
     @RequestMapping("create")
     private String create(Address address) {
+        User user = userService.queryById(address.getUserId());
+        if (user.getAddressId() > 0) {
+            request.setAttribute("message", "User has address.");
+            return "/createAddress.jsp";
+        }
         addressService.create(address);
-        User user=userService.queryById(address.getUserId());
         user.setAddressId(address.getId());
         userService.update(user);
-        // TODO: 2018-05-24 update user
         return "redirect:/createAddress.jsp";
     }
+
+    @RequestMapping("queryAll")
+    private String queryAll() {
+        session.setAttribute("addresses", addressService.queryAll());
+        return "redirect:/addresses.jsp";
+    }
+
 
 }

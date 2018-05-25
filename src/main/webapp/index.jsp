@@ -32,6 +32,8 @@
   <p><a href="/user/queryAllUsers">同时列出所有的用户，和对应的所有图书</a></p>
   <p><a href="/book/queryAllBooks">查询所有图书</a></p>
   <p><a href="/user/toCreateAddress">添加地址</a></p>
-  <%--<p><a href="/createAddress.jsp">添加地址</a></p>--%>
+
+  <p><a href="/user/queryAll1">List All Users -> users.jsp</a></p>
+  <p><a href="/address/queryAll">List All Address -> address.jsp</a></p>
   </body>
 </html>
