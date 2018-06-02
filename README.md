@@ -47,3 +47,7 @@ Java EE包含JSP和Servlet
 - 多对1
 
 1 修改user模型类 添加属性
+
+student course 多对多
+id name 
+id title

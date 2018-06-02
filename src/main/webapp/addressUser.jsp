@@ -12,6 +12,6 @@
 </head>
 <body>
 <h1>address user</h1>
-${sessionScope.address.detail} -> ${sessionScope.address.user.username}
+${sessionScope.address.id} : ${sessionScope.address.detail} -> ${sessionScope.address.user.id} ：${sessionScope.address.user.username}
 </body>
 </html>
