@@ -4,23 +4,36 @@
     * [服务层的通用接口](src/main/java/service/GenericService.java)	
     * [服务层的书籍表接口](src/main/java/service/BookService.java)	
     * [服务层的地址表接口](src/main/java/service/AddressService.java)	
+    * [服务层的学生表接口](src/main/java/service/StudentService.java)	
+    * [服务层的课程表接口](src/main/java/service/CourseService.java)	
+    
     * [服务层的通用接口实现类](src/main/java/service/impl/GenericServiceImpl.java)	
+    * [服务层的书籍表](src/main/java/service/impl/BookServiceImpl.java)	
+    * [服务层的地址表](src/main/java/service/impl/AddressServiceImpl.java)	
+    * [服务层的学生表](src/main/java/service/impl/StudentServiceImpl.java)	
+    * [服务层的课程表](src/main/java/service/impl/CourseServiceImpl.java)	
 * Spring 在数据层和数据库层实现数据的分层结构 Dao层
     * [后台数据实现的通用接口](src/main/java/dao/GenericDao.java)	
     * [书籍表数据实现的接口](src/main/java/dao/BookDao.java)	
     * [地址表数据实现的接口](src/main/java/dao/AddressDao.java)	
     * [用户表数据实现的接口](src/main/java/dao/UserDao.java)	
+    * [学生表数据实现的接口](src/main/java/dao/StudentDao.java)	
+    * [课程表数据实现的接口](src/main/java/dao/CourseDao.java)	
     
     * [所有表数据接口的实现类](src/main/java/dao/impl/GenericDaoImpl.java)	
     * [MyBatis书籍表数据接口的实现类](src/main/java/dao/impl/BookDaoImpl.java)	
     * [MyBatis地址表数据接口的实现类](src/main/java/dao/impl/AddressDaoImpl.java)	
     * [JDBC书籍表数据接口的实现类](src/main/java/dao/impl/JDBCBookDaoImpl.java)	
     * [MyBatis用户表数据接口的实现类](src/main/java/dao/impl/UserDaoImpl.java)	
+    * [MyBatis学生表数据接口的实现类](src/main/java/dao/impl/StudentDaoImpl.java)	
+    * [MyBatis课程表数据接口的实现类](src/main/java/dao/impl/CourseDaoImpl.java)	
 * Spring MVC + MyBaits实现和web页面的交互
     * [MVC配置后台的父类](src/main/java/controller/BaseController.java)	
     * [MVC配置用户表对应的后台](src/main/java/controller/UserController.java)	
     * [MVC配置地址表对应的后台](src/main/java/controller/AddressController.java)	
     * [MVC配置图书表对应的后台](src/main/java/controller/BookController.java)	  
+    * [MVC配置学生表对应的后台](src/main/java/controller/StudentController.java)	  
+    * [MVC配置课程表对应的后台](src/main/java/controller/CourseController.java)	  
 * spring框架webMVC网络框架文件的加载
   * [加载网络文件](src/main/webapp/WEB-INF/web.xml)  
   * [第二个加载网络文件](src/main/webapp/WEB-INF/web-servlet.xml)  
@@ -48,6 +61,7 @@
   * [显示多个用户和他所对应的图书](src/main/webapp/userAndBooks.jsp)	    
   * [创建地址和用户的对应关系](src/main/webapp/createAddress.jsp)	    
   * [显示一个地址对应的用户](src/main/webapp/addressUser.jsp)	    
+  * [列出所有的学生](src/main/webapp/students.jsp)	    
 * MyBaits框架配置后台方法这个比较少用  结合HttpServlet类写的   
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
     * [图书表对应的后台](src/main/java/action/BookAction.java)	
@@ -65,8 +79,11 @@
 * 初始化mybatis框架的数据库资源配置  
     * [配置数据库账号的属性](src/main/resources/jdbc.properties)	
     * [配置数据库参数 以后可以没有](src/main/resources/mybatis-config.xml)	
-    * [配置数据库映射语句](src/main/resources/mapper/user-mapper.xml)	
-    * [配置数据库映射语句](src/main/resources/mapper/book-mapper.xml)	
+    * [配置用户表数据库映射语句](src/main/resources/mapper/user-mapper.xml)	
+    * [配置图书表数据库映射语句](src/main/resources/mapper/book-mapper.xml)	
+    * [配置地址表数据库映射语句](src/main/resources/mapper/address.xml)	
+    * [配置课程表数据库映射语句](src/main/resources/mapper/course.xml)	
+    * [配置学生表数据库映射语句](src/main/resources/mapper/student.xml)	
 * 工具类相关        
     * [编码过滤器](src/main/java/util/EncodingFilter.java)	
 

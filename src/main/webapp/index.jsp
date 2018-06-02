@@ -33,7 +33,10 @@
   <p><a href="/book/queryAllBooks">查询所有图书</a></p>
   <p><a href="/user/toCreateAddress">添加地址</a></p>
 
-  <p><a href="/user/queryAll1">List All Users -> users.jsp</a></p>
-  <p><a href="/address/queryAll">List All Address -> address.jsp</a></p>
+  <p><a href="/user/queryAll1">列出所有的用户</a></p>
+  <p><a href="/address/queryAll">列出所有的地址</a></p>
+
+  <hr>
+  <p><a href="/student/queryAll">列出所有的学生</a></p>
   </body>
 </html>
