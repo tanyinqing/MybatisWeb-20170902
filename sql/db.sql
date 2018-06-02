@@ -99,4 +99,30 @@ SELECT md5('123');*/
 ALTER TABLE db.book
   AUTO_INCREMENT 2147483647;*/ -- int max value 让id从整型的最大值开始
 
+# 学生表
+DROP TABLE IF EXISTS db.student;
+CREATE TABLE db.student (
+  id  INT AUTO_INCREMENT PRIMARY KEY
+  COMMENT 'id PK',
+  name   VARCHAR(255)  NOT NULL
+  COMMENT '姓名'
 
+)
+  COMMENT 'book student';
+
+SELECT *
+FROM db.student;
+
+# 课程表
+DROP TABLE IF EXISTS db.course;
+CREATE TABLE db.course (
+  id  INT AUTO_INCREMENT PRIMARY KEY
+  COMMENT 'id PK',
+  name   VARCHAR(255)  NOT NULL
+  COMMENT '课程名'
+
+)
+  COMMENT 'book course';
+
+SELECT *
+FROM db.course;
