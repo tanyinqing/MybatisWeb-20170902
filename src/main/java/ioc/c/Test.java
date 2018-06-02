@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * µÍñîºÏ
+ * ä½è€¦åˆ
  */
 public class Test {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class Test {
         business.setDeviceWriter(new UsbWriter11());
         //  Business business=new Business(new UsbWriter11());
         business.saveData();*/
-//¼ÓÔØÅäÖÃÎÄ¼ş  Ó¦ÓÃ³ÌĞòÉÏÏÂÎÄ  ²âÊÔÀàµ÷ÓÃµ×²ãÓ¦ÓÃÀà
+//åŠ è½½é…ç½®æ–‡ä»¶  åº”ç”¨ç¨‹åºä¸Šä¸‹æ–‡  æµ‹è¯•ç±»è°ƒç”¨åº•å±‚åº”ç”¨ç±»
         ApplicationContext applicationContext=
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         Business business= (Business) applicationContext.getBean("business");

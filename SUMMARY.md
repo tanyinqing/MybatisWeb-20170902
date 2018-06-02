@@ -1,18 +1,21 @@
 
 * [导读](README.md)
-* Spring 在数据层和业务层实现数据的分层结构
+* Spring 在数据层和业务层实现数据的分层结构  Service层
     * [服务层的通用接口](src/main/java/service/GenericService.java)	
     * [服务层的书籍表接口](src/main/java/service/BookService.java)	
     * [服务层的地址表接口](src/main/java/service/AddressService.java)	
     * [服务层的通用接口实现类](src/main/java/service/impl/GenericServiceImpl.java)	
-* Spring 在数据层和数据库层实现数据的分层结构
+* Spring 在数据层和数据库层实现数据的分层结构 Dao层
     * [后台数据实现的通用接口](src/main/java/dao/GenericDao.java)	
     * [书籍表数据实现的接口](src/main/java/dao/BookDao.java)	
     * [地址表数据实现的接口](src/main/java/dao/AddressDao.java)	
+    * [用户表数据实现的接口](src/main/java/dao/UserDao.java)	
+    
     * [所有表数据接口的实现类](src/main/java/dao/impl/GenericDaoImpl.java)	
     * [MyBatis书籍表数据接口的实现类](src/main/java/dao/impl/BookDaoImpl.java)	
     * [MyBatis地址表数据接口的实现类](src/main/java/dao/impl/AddressDaoImpl.java)	
     * [JDBC书籍表数据接口的实现类](src/main/java/dao/impl/JDBCBookDaoImpl.java)	
+    * [MyBatis用户表数据接口的实现类](src/main/java/dao/impl/UserDaoImpl.java)	
 * Spring MVC + MyBaits实现和web页面的交互
     * [MVC配置后台的父类](src/main/java/controller/BaseController.java)	
     * [MVC配置用户表对应的后台](src/main/java/controller/UserController.java)	
@@ -44,25 +47,26 @@
   * [显示一个用户对应的图书](src/main/webapp/userBooks.jsp)	    
   * [显示多个用户和他所对应的图书](src/main/webapp/userAndBooks.jsp)	    
   * [创建地址和用户的对应关系](src/main/webapp/createAddress.jsp)	    
-* MyBaits框架配置后台方法这个比较少用     
+  * [显示一个地址对应的用户](src/main/webapp/addressUser.jsp)	    
+* MyBaits框架配置后台方法这个比较少用  结合HttpServlet类写的   
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
     * [图书表对应的后台](src/main/java/action/BookAction.java)	
 * MyBaits框架配置图书对应的数据库表   映射文件  
     * [配置测试类](src/main/java/demo/BookTest.java)	
-    * [配置实体类和数据库表对应](src/main/java/demo.model/Book.java)	
-    * [配置数据库映射语句  并要加载进来](src/main/resources/book-mapper.xml)	
+    * [配置实体类和数据库表对应](src/main/java/model/Book.java)	
+    * [配置数据库映射语句  并要加载进来](src/main/resources/mapper/book-mapper.xml)	
 * 配置grade文件     
     * [配置grade文件](build.gradle)	
 * mybatis框架的初始化java配置和测试   
     * [配置测试类](src/main/java/demo/MyBatisTest.java)	
     * [配置工具类 以后可以没有](src/main/java/util/MyBatisSession.java)	
-    * [配置实体类和数据库表对应](src/main/java/demo.model/User.java)	
+    * [配置实体类和数据库表对应](src/main/java/model/User.java)	
     * [配置接口](src/main/java/mapper/UserMapper.java)	
 * 初始化mybatis框架的数据库资源配置  
     * [配置数据库账号的属性](src/main/resources/jdbc.properties)	
     * [配置数据库参数 以后可以没有](src/main/resources/mybatis-config.xml)	
-    * [配置数据库映射语句](src/main/resources/user-mapper.xml)	
-    * [配置数据库映射语句](src/main/resources/book-mapper.xml)	
+    * [配置数据库映射语句](src/main/resources/mapper/user-mapper.xml)	
+    * [配置数据库映射语句](src/main/resources/mapper/book-mapper.xml)	
 * 工具类相关        
     * [编码过滤器](src/main/java/util/EncodingFilter.java)	
 
