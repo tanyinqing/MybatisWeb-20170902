@@ -15,7 +15,7 @@
 <h1>addresses</h1>
 <ul>
     <c:forEach var="address" items="${sessionScope.addresses}">
-        <li><a href="">${address.detail}</a></li>
+        <li><a href="/address/addressUser/${address.id}">${address.detail}</a></li>
     </c:forEach>
 </ul>
 </body>

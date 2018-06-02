@@ -8,7 +8,7 @@ public class Address implements Serializable {
     private  Integer id;
     private  String detail;
     private  int userId;
-
+    private User user;
     public Address() {
     }
 
@@ -16,6 +16,14 @@ public class Address implements Serializable {
         this.id = id;
         this.detail = detail;
         this.userId = userId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Integer getId() {

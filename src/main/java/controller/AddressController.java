@@ -46,5 +46,11 @@ public class AddressController extends BaseController {
         return "redirect:/addresses.jsp";
     }
 
+    @RequestMapping("addressUser/{id}")
+    private String addressUser(@PathVariable int id) {
+        session.setAttribute("address", addressService.queryOne("addressUser", id));
+        return "redirect:/addressUser.jsp";
+    }
+
 
 }
