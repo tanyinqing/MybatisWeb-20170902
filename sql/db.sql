@@ -75,7 +75,7 @@ DROP TABLE IF EXISTS db.course;
 CREATE TABLE db.course (
   id  INT AUTO_INCREMENT PRIMARY KEY
   COMMENT 'id PK',
-  name   VARCHAR(255)  NOT NULL
+  title   VARCHAR(255)  NOT NULL
   COMMENT '课程名'
 
 )
@@ -161,6 +161,17 @@ SELECT
 FROM db.user AS u INNER JOIN db.book AS b
     ON u.id = b.userId
 WHERE u.id = 1;
+
+# 三表联合查询  查询条件 n-1  student_course要有模型类
+SELECT
+  s.name,
+  c.title
+from db.student as s inner join db.course as c
+  inner join db.student_course sc
+    on c.id = sc.courseId and s.id = sc.studentId
+where s.id = 2;
+
+
 
 /*
 SELECT '123';

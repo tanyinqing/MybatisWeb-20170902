@@ -25,7 +25,7 @@
   </form>--%>
   ${requestScope.message}
   <p>
-    <a href="sign_up.jsp">Sign up</a>
+    <a href="/sign_up.jsp">Sign up</a>
   </p>
   <hr>
   <p><a href="/user/queryAll">列出所有的用户，并查处他对应的图书</a></p>

@@ -9,4 +9,29 @@
         from db.student
         order by id desc;
     </select>
+
+    <!--三表联合查询-->
+
+    <resultMap id="studentCourses_map" type="student">
+        <result property="name" column="name"/>
+        <collection property="courses" ofType="course">
+            <result property="title" column="title"/>
+        </collection>
+    </resultMap>
+    <select id="studentCourses" parameterType="int" resultMap="studentCourses_map">
+        #         select
+        #             s.name,
+        #             c.title
+        #         from db.student_course as sc
+        #             inner join db.student as s
+        #             inner join db.course as c
+        #                 on sc.courseId = c.id and sc.studentId = s.id
+        #         where s.id = #{id}
+
+        select
+        s.name,
+        c.title
+        from db.student as s inner join db.course as c
+        on s.id = #{id} and c.id = 1
+    </select>
 </mapper>
