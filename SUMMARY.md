@@ -62,6 +62,9 @@
   * [创建地址和用户的对应关系](src/main/webapp/createAddress.jsp)	    
   * [显示一个地址对应的用户](src/main/webapp/addressUser.jsp)	    
   * [列出所有的学生](src/main/webapp/students.jsp)	    
+  * [列出某个学生学习的多个课程](src/main/webapp/student.jsp)	    
+  * [列出所有的课程](src/main/webapp/courses.jsp)	    
+  * [列出某个课程学习的所有学生](src/main/webapp/course.jsp)	    
 * MyBaits框架配置后台方法这个比较少用  结合HttpServlet类写的   
     * [用户表对应的后台](src/main/java/action/UserAction.java)	
     * [图书表对应的后台](src/main/java/action/BookAction.java)	

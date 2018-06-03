@@ -9,14 +9,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>student page</title>
+    <title>course page</title>
 </head>
 <body>
-<h1>student</h1>
-<p>${sessionScope.student.name}</p>
+<h1>course</h1>
+<p>${sessionScope.course.title}</p>
 <ul>
-    <c:forEach var="course" items="${sessionScope.student.courses}">
-        <li>${course.title}</li>
+    <c:forEach var="student" items="${sessionScope.course.students}">
+        <li>${student.name}</li>
     </c:forEach>
 </ul>
 </body>
