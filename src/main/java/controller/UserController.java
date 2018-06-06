@@ -5,7 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import service.UserService;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * 控制器
@@ -24,15 +29,24 @@ public class UserController extends BaseController{//高级业务类
 /*
     @Autowired
     private SqlSession sqlSession;*/
+   private static final String AVATAR_PATH = "/avatars";
 
     @RequestMapping("signUp")
-    private String signUp(User user) {
+    private String signUp(User user,@RequestParam MultipartFile avatarFile) throws IOException {
 //        System.out.println("user..."+user.toString());
         //运用mybatis框架把用户存储到数据库中  隐含的对应关系
 //        try(SqlSession sqlSession = MyBatisSession.getSqlSession(true)) {//底层模块类
 //            sqlSession.insert("mapper.UserMapper.create", user);
 //        }
 //        if (userDao.queryByUsername(user) != null) {
+
+//        相对应用程序的路径
+        String avatarPath = application.getRealPath(AVATAR_PATH);
+        avatarFile.transferTo(new File(avatarPath, avatarFile.getOriginalFilename()));
+
+        user.setAvatar(avatarFile.getOriginalFilename());
+
+
         if (!userService.signUp(user)) {
             request.setAttribute("message", "username is existed.");
             return "/sign_up.jsp";

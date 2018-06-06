@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <title>student page</title>
@@ -14,10 +15,18 @@
 <body>
 <h1>student</h1>
 <p>${sessionScope.student.name}</p>
-<ul>
-    <c:forEach var="course" items="${sessionScope.student.courses}">
-        <li>${course.title}</li>
-    </c:forEach>
-</ul>
+<c:choose>
+    <c:when test="${fn:length(sessionScope.student.courses) eq 0}">
+        未选课
+    </c:when>
+    <c:otherwise>
+        <ul>
+            <c:forEach var="course" items="${sessionScope.student.courses}">
+                <li>${course.title}</li>
+            </c:forEach>
+        </ul>
+    </c:otherwise>
+</c:choose>
+
 </body>
 </html>

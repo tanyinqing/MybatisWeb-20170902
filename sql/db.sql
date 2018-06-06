@@ -1,4 +1,5 @@
 
+
 DROP DATABASE IF EXISTS db;
 CREATE DATABASE db;
 # CREATE DATABASE shop;
@@ -11,6 +12,7 @@ CREATE TABLE db.user (
   COMMENT 'username',
   password VARCHAR(255) NOT NULL
   COMMENT 'password',
+  avatar    varchar(255) comment 'avatar',
   addressId INT UNIQUE COMMENT 'addressId id FK'
 )
   COMMENT 'user table';

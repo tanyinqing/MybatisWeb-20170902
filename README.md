@@ -51,3 +51,22 @@ Java EE包含JSP和Servlet
 student course 多对多
 id name 
 id title
+
+判断是否有课
+引入第三方库  3个库会下载下来
+1. build.gradle jackson:jackson databind
+2. 添加注解
+
+提交头像
+1. jsp中加入文件
+2. 表单中加入属性
+3. 依赖第三方库  
+4. web-servlet文件修改
+5.建立一个目录，存放用户的头像
+
+Spring file upload
+1. jsp <input type="file" ...>
+2. jsp <form ...  enctype="multipart/form-data">    
+3. build.gradle: commons fileupload
+4. web-servlet.xml: multipartResolver bean
+5. webapp: avatars folder

@@ -9,8 +9,8 @@
     </insert>-->
 
     <insert id="create" parameterType="user" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO db.user(username, password)
-        VALUE (#{username}, md5(#{password}))
+        INSERT INTO db.user(username, password,avatar)
+        VALUE (#{username}, md5(#{password}), #{avatar})
     </insert>
 
     <update id="modify" parameterType="model.User">

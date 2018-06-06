@@ -16,6 +16,7 @@
 <ul>
     <c:forEach var="student" items="${sessionScope.students}">
         <li><a href="/student/studentCourses/${student.id}">${student.name}</a></li>
+        <li><a href="/student/studentCoursesJson/${student.id}">${student.name} 返回json数据</a></li>
     </c:forEach>
 </ul>
 </body>

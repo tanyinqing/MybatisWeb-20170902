@@ -8,6 +8,7 @@ public class User implements Serializable {
     private  Integer id;
     private  String username;
     private  String password;
+    private String avatar;
     private List<Book> books;
     private  int addressId;
     private Address address;
@@ -30,6 +31,14 @@ public class User implements Serializable {
                 ", password='" + password + '\'' +
                 ", books=" + books +
                 '}';
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public Address getAddress() {

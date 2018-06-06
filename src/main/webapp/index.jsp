@@ -38,6 +38,7 @@
 
   <hr>
   <p><a href="/student/queryAll">列出所有的学生</a></p>
+  <p><a href="/student/queryAllJson">列出所有的学生 返回json数据</a></p>
   <p><a href="/course/queryAll">列出所有的课程</a></p>
   </body>
 </html>
