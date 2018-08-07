@@ -1,6 +1,7 @@
 * [目录](SUMMARY.md)
 
-20180607讲完课程
+20180807 公司电脑
+如何生成war包，以及war包的使用
 
 web.xml Project Structure-Facets- web 修改路径配置web.xml文件
 Project Structure --Facets--spring  加载spring的配置文件
